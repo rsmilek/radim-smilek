@@ -1,6 +1,6 @@
-import React from "react"
-import Helmet from 'react-helmet';
-import Layout from "../components/layout"
+import React from "react";
+import Helmet from "react-helmet";
+import Layout from "../components/layout";
 import { Link } from "gatsby";
 
 const notFound = () => {
@@ -9,14 +9,8 @@ const notFound = () => {
       <Helmet>
         <title>Page not found</title>
       </Helmet>
-      <div style={{textAlign: "center", padding:"5vh 0", lineHeight: "1.5"}}>
-        <svg
-          width="256"
-          height="256"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+      <div style={{ textAlign: "center", padding: "5vh 0", lineHeight: "1.5" }}>
+        <svg width="256" height="256" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M14.1254 13H10.1254V15H14.1254V13Z" fill="currentColor" />
           <path
             fill-rule="evenodd"
@@ -37,10 +31,12 @@ const notFound = () => {
             fill="currentColor"
           />
         </svg>
-        <p>Either you are in a wrong page or you have lost. Lets go back <Link to="/">home</Link> safely</p>
+        <p>
+          Either you are in a wrong page or you have lost. Lets go back <Link to="/">home</Link> safely
+        </p>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default notFound
+export default notFound;
