@@ -18,7 +18,7 @@ Client Secret: d683945b7ee14da3164d094f39da853cc46c4f94
 
 # Delog - Blog for Developer and Designer
 
-This simple website built with GatsbyJS and Netlify CMS. Deploys on netlify with single click. This Starter is sponsered by [W3Layouts](https://w3layouts.com).
+This simple website built with GatsbyJS and Netlify CMS. Deploys on netlify with single click. This Starter is sponsored by [W3Layouts](https://w3layouts.com).
 
 [![Delog - Gatsby Starter Demo](https://w3layouts.com/wp-content/uploads/2020/03/delog.jpg)](https://delog-w3layouts.netlify.com/)
 
@@ -49,7 +49,7 @@ Instructions also available at W3Layouts [Delog Launch Article](https://w3layout
 - Enter Repository Name
 - And your site starts build process. After the build process your website is live
 
-### Changing repositary URL for Netlify CMS access
+### Changing repository URL for Netlify CMS access
 
 You need to change repo URL to your own `repo` at `/static/admin/config.yml`, for example `username/repo-name`
 
@@ -98,7 +98,7 @@ For issues,feedback on enhancement or sharing your new awesome website built wit
 
 ## Roadmap
 
-We are maintaining future task in [Github Project](https://github.com/W3Layouts/gatsby-starter-delog/projects/1), even though most changes are instantaious. We try keep them posted here.
+We are maintaining future task in [Github Project](https://github.com/W3Layouts/gatsby-starter-delog/projects/1), even though most changes are instantaneous. We try keep them posted here.
 
 ---
 
@@ -158,7 +158,7 @@ All notable changes to this project are listed here.
 
 #### Added
 
-- Dark mode compatibitly and toggle for user preference
+- Dark mode compatibility and toggle for user preference
 
 ### [1.0.0] - 2020-03-14
 
