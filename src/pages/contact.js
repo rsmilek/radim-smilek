@@ -28,20 +28,28 @@ const ContactPage = ({ data: { site } }) => {
             method="post"
           >
             <div>
-              <label htmlFor="w3lName">Name</label>
-              <input type="text" name="w3lName" id="w3lName" />
+              {/* <label htmlFor="w3lName"> */}
+              {/* Name */}
+              <input type="text" name="w3lName" id="w3lName" placeholder="Name" />
+              {/* </label> */}
             </div>
             <div>
-              <label htmlFor="w3lSender">Email</label>
-              <input type="email" name="w3lSender" id="w3lSender" />
+              {/* <label htmlFor="w3lSender"> */}
+              {/* Email */}
+              <input type="email" name="w3lSender" id="w3lSender" placeholder="Email" />
+              {/* </label> */}
             </div>
             <div>
-              <label htmlFor="w3lSubject">Subject</label>
-              <input type="text" name="w3lSubject" id="w3lSubject" />
+              {/* <label htmlFor="w3lSubject"> */}
+              {/* Subject */}
+              <input type="text" name="w3lSubject" id="w3lSubject" placeholder="Subject" />
+              {/* </label> */}
             </div>
             <div>
-              <label htmlFor="w3lMessage">Message</label>
-              <textarea name="w3lMessage" id="w3lMessage"></textarea>
+              {/* <label htmlFor="w3lMessage"> */}
+              {/* Message */}
+              <textarea name="w3lMessage" id="w3lMessage" placeholder="Message" />
+              {/* </label> */}
             </div>
             <div style={{ display: "flex", justifyContent: "flex-end" }}>
               <input type="submit" className="button -primary" style={{ marginRight: 0 }} />
