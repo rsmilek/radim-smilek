@@ -1,0 +1,111 @@
+$colorPrimaryLight: #ff8a50;
+$colorPrimaryMain: #ff5722;
+$colorPrimaryDark: #c41c00;
+$colorPrimaryText: #ffffff;
+$colorPrimaryContrastText: #373737;
+
+$colorSecondaryLight: #006758;
+$colorSecondaryMain: #009688;
+$colorSecondaryDark: #52c78b;
+$colorSecondaryText: #ffffff;
+$colorSecondaryContrastText: #373737;
+
+$textColor: $colorPrimaryMain;
+$textColorHover: $colorPrimaryContrastText;
+$textColorScrolled: $colorPrimaryText;
+$textColorScrolledHover: $colorPrimaryContrastText;
+
+$bgColor: transparent;
+$bgColorScrolled: $colorPrimaryMain;
+
+$fontNavbar: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+  Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+#myNavbar {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  background-color: $bgColorScrolled;
+  transition: background-color 0.2s ease;
+}
+
+#myNavbar .navbar-brand {
+  color: $textColorScrolled;
+  font-family: $fontNavbar;
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-left: 30px;
+  margin-right: 100px;
+}
+#myNavbar .navbar-brand:hover {
+  color: $textColorHover;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+.navbar-toggler {
+  border-color: $textColorScrolled;
+}
+
+#myNavbar .navbar-nav .nav-item .nav-link {
+  color: $textColorScrolled;
+  font-family: $fontNavbar;
+  font-weight: 600;
+  font-size: 0.9rem;
+  // Navbar brad indentation (no nav-items underscore - padding: 0.75rem 10px; )
+  margin-right: 10px;
+  margin-left: 10px;
+}
+#myNavbar .navbar-nav .nav-item .nav-link:hover,
+#myNavbar .navbar-nav .nav-item .nav-link:active {
+  color: $textColorHover;
+}
+#myNavbar .navbar-nav .nav-item .nav-link.active {
+  color: $textColorHover !important;
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  #myNavbar {
+    box-shadow: none;
+    background-color: $bgColor;
+  }
+  #myNavbar .navbar-brand {
+    color: $textColor;
+    font-size: 1.6rem;
+  }
+  #myNavbar .navbar-brand:hover {
+    color: $textColorHover;
+  }
+  #myNavbar .navbar-nav .nav-item .nav-link {
+    color: $textColor;
+    font-size: 1rem;
+    // Navbar brad indentation (no nav-items underscore - padding: 0 1rem; )
+    padding-bottom: 1px;
+  }
+  #myNavbar .navbar-nav .nav-item .nav-link:hover {
+    color: $textColorHover;
+  }
+  // #myNavbar .navbar-nav .nav-item:last-child .nav-link {
+  //   // Navbar brad indentation (no nav-items underscore - padding-right: 0; )
+  //   padding-right: 0;
+  // }
+  #myNavbar .navbar-nav .nav-item .nav-link.active {
+    border-bottom: 4px solid $textColorHover; // nav-items underscore
+  }
+  #myNavbar.navbar-scrolled {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+    background-color: $bgColorScrolled;
+  }
+  #myNavbar.navbar-scrolled .navbar-brand {
+    color: $textColorScrolled;
+  }
+  #myNavbar.navbar-scrolled .navbar-brand:hover {
+    color: $textColorScrolledHover;
+  }
+  #myNavbar.navbar-scrolled .navbar-nav .nav-item .nav-link {
+    color: $textColorScrolled;
+  }
+  #myNavbar.navbar-scrolled .navbar-nav .nav-item .nav-link:hover {
+    color: $textColorScrolledHover;
+  }
+}
