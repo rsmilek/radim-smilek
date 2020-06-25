@@ -1,14 +1,14 @@
 $colorPrimaryLight: #ff8a50;
 $colorPrimaryMain: #ff5722;
 $colorPrimaryDark: #c41c00;
-$colorPrimaryText: #ffffff;
-$colorPrimaryContrastText: #373737;
+$colorPrimaryText: rgb(255, 255, 255);
+$colorPrimaryContrastText: rgba(0, 0, 0, 0.7);
 
 $colorSecondaryLight: #006758;
 $colorSecondaryMain: #009688;
 $colorSecondaryDark: #52c78b;
-$colorSecondaryText: #ffffff;
-$colorSecondaryContrastText: #373737;
+$colorSecondaryText: rgb(255, 255, 255);
+$colorSecondaryContrastText: rgba(0, 0, 0, 0.7);
 
 $textColor: $colorPrimaryMain;
 $textColorHover: $colorPrimaryContrastText;
