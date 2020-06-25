@@ -66,7 +66,7 @@ class NavBar extends Component {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
           {/* First in DOM, no order applied */}
           <a className="navbar-brand js-scroll-trigger" href="#pageTop">
@@ -74,9 +74,9 @@ class NavBar extends Component {
           </a>
           {/* Second in DOM, order 2, re-order 3 on large screens
               NOTE: Items to always show keep out of the navbar-collapse div */}
-          <div class="d-flex flex-row order-2 order-lg-3">
-            <ul class="navbar-nav flex-row">
-              <li class="nav-item">
+          <div className="d-flex flex-row order-2 order-lg-3">
+            <ul className="navbar-nav flex-row">
+              <li className="nav-item">
                 <span className="nav-link px-2">
                   <ThemeChanger />
                 </span>
@@ -84,7 +84,7 @@ class NavBar extends Component {
             </ul>
           </div>
           {/* Third in DOM, order 3, re-order 2 on large screens */}
-          <div class="collapse navbar-collapse order-3 order-lg-2" id="navbarSupportedContent">
+          <div className="collapse navbar-collapse order-3 order-lg-2" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
                 <a className="nav-link js-scroll-trigger" href="#myNavbarHome">
