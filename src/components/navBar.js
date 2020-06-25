@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import $ from "jquery"; // Bootstrap core JS
+import ThemeChanger from "./themeChanger";
 
 class NavBar extends Component {
   constructor(props) {
@@ -54,13 +55,8 @@ class NavBar extends Component {
   render() {
     return (
       <div id="pageTop">
-        {/* <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="myNavbar"> */}
-        {/* <nav className="navbar navbar-expand-lg sticky-top" id="myNavbar"> */}
         <nav className="navbar navbar-expand-lg fixed-top" id="myNavbar">
-          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-          <a className="navbar-brand js-scroll-trigger" href="#pageTop">
-            Navbar
-          </a>
+          {/* Button (Hamburger menu) at first means to be most left in navigation bar on collapse */}
           <button
             className="navbar-toggler"
             type="button"
@@ -70,9 +66,25 @@ class NavBar extends Component {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          {/* First in DOM, no order applied */}
+          <a className="navbar-brand js-scroll-trigger" href="#pageTop">
+            Navbar
+          </a>
+          {/* Second in DOM, order 2, re-order 3 on large screens
+              NOTE: Items to always show keep out of the navbar-collapse div */}
+          <div class="d-flex flex-row order-2 order-lg-3">
+            <ul class="navbar-nav flex-row">
+              <li class="nav-item">
+                <span className="nav-link px-2">
+                  <ThemeChanger />
+                </span>
+              </li>
+            </ul>
+          </div>
+          {/* Third in DOM, order 3, re-order 2 on large screens */}
+          <div class="collapse navbar-collapse order-3 order-lg-2" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
                 <a className="nav-link js-scroll-trigger" href="#myNavbarHome">
@@ -92,6 +104,7 @@ class NavBar extends Component {
             </ul>
           </div>
         </nav>
+
         <div className="mt-5">
           <p className="p-5 m-5"></p>
           <p className="p-5 m-5"></p>
