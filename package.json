@@ -12,7 +12,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.13.1",
     "@fortawesome/react-fontawesome": "^0.1.11",
     "bootstrap": "^4.5.0",
-    "gatsby": "^2.23.9",
+    "gatsby": "^2.21.0",
     "gatsby-plugin-dark-mode": "^1.1.1",
     "gatsby-plugin-google-analytics": "^2.1.36",
     "gatsby-plugin-manifest": "^2.4.1",
@@ -32,17 +32,17 @@
     "node-sass": "^4.14.1",
     "popper.js": "^1.16.1",
     "prismjs": "^1.19.0",
-    "react": "^16.13.1",
+    "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
-    "redux": "^3.7.2",
-    "typescript": "^3.9.5"
+    "redux": "^2.0.0"
   },
   "devDependencies": {
     "acorn": "^6.4.1",
     "codemirror": "^5.55.0",
+    "minimist": "^1.2.3",
     "prettier": "^1.19.1",
-    "react-refresh": "^0.8.3"
+    "typescript": "^3.9.5"
   },
   "homepage": "https://github.com/W3Layouts/gatsby-starter-delog#readme",
   "keywords": [
