@@ -8,6 +8,15 @@ class NavBar extends Component {
     this.state = {};
   }
 
+  // Event handler - Collapse Navbar
+  navbarCollapse = () => {
+    if ($("#myNavbar").offset().top > 100) {
+      $("#myNavbar").addClass("navbar-scrolled");
+    } else {
+      $("#myNavbar").removeClass("navbar-scrolled");
+    }
+  };
+
   componentDidMount() {
     // Activate scrollspy to add active class to navbar items on scroll
     $("body").scrollspy({
@@ -18,18 +27,10 @@ class NavBar extends Component {
     $(".js-scroll-trigger").click(function() {
       $(".navbar-collapse").collapse("hide");
     });
-    // Collapse Navbar
-    var navbarCollapse = function() {
-      if ($("#myNavbar").offset().top > 100) {
-        $("#myNavbar").addClass("navbar-scrolled");
-      } else {
-        $("#myNavbar").removeClass("navbar-scrolled");
-      }
-    };
     // Collapse now if page is not at top
-    navbarCollapse();
-    // Collapse the navbar when page is scrolled
-    $(window).scroll(navbarCollapse);
+    this.navbarCollapse();
+    // Collapse the navbar when page is scrolled - bind scroll event handler
+    $(window).scroll(this.navbarCollapse);
     // Smooth scrolling using jQuery easing
     $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
       if (
@@ -50,6 +51,11 @@ class NavBar extends Component {
         }
       }
     });
+  }
+
+  componentWillUnmount() {
+    // Unbind scroll event handler
+    $(window).unbind("scroll", this.navbarCollapse);
   }
 
   render() {
