@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import $ from "jquery"; // Bootstrap core JS
 import ThemeChanger from "./themeChanger";
 
-class NavBar extends Component {
+export default class MainNavbar extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -140,5 +140,3 @@ class NavBar extends Component {
     );
   }
 }
-
-export default NavBar;
