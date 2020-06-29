@@ -1,51 +1,51 @@
-$colorPrimaryLight: #ff8a50;
-$colorPrimaryMain: #ff5722;
-$colorPrimaryDark: #c41c00;
-$colorPrimaryText: rgb(255, 255, 255);
-$colorPrimaryContrastText: rgba(0, 0, 0, 0.7);
+$color-primary-light: #ff8a50;
+$color-primary-main: #ff5722;
+$color-primary-dark: #c41c00;
+$color-primary-text: rgb(255, 255, 255);
+$color-primary-contrast-text: rgba(0, 0, 0, 0.7);
 
-$colorSecondaryLight: #006758;
-$colorSecondaryMain: #009688;
-$colorSecondaryDark: #52c78b;
-$colorSecondaryText: rgb(255, 255, 255);
-$colorSecondaryContrastText: rgba(0, 0, 0, 0.7);
+$color-secondary-light: #006758;
+$color-secondary-main: #009688;
+$color-secondary-dark: #52c78b;
+$color-secondary-text: rgb(255, 255, 255);
+$color-secondary-contrast-text: rgba(0, 0, 0, 0.7);
 
-$textColor: $colorPrimaryMain;
-$textColorHover: $colorPrimaryContrastText;
-$textColorScrolled: $colorPrimaryText;
-$textColorScrolledHover: $colorPrimaryContrastText;
+$text-color: $color-primary-main;
+$text-color-hover: $color-primary-contrast-text;
+$text-color-scrolled: $color-primary-text;
+$text-color-scrolled-hover: $color-primary-contrast-text;
 
-$bgColor: transparent;
-$bgColorScrolled: $colorPrimaryMain;
+$bg-color: transparent;
+$bg-color-scrolled: $color-primary-main;
 
 $fontNavbar: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
   Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
 #mainNavbar {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  background-color: $bgColorScrolled;
+  background-color: $bg-color-scrolled;
   transition: background-color 0.2s ease;
 }
 
 #mainNavbar .navbar-brand {
-  color: $textColorScrolled;
+  color: $text-color-scrolled;
   font-family: $fontNavbar;
   font-weight: 700;
   font-size: 1.3rem;
 }
 #mainNavbar .navbar-brand:hover {
-  color: $textColorHover;
+  color: $text-color-hover;
 }
 
 .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 .navbar-toggler {
-  border-color: $textColorScrolled;
+  border-color: $text-color-scrolled;
 }
 
 #mainNavbar .navbar-nav .nav-item .nav-link {
-  color: $textColorScrolled;
+  color: $text-color-scrolled;
   font-family: $fontNavbar;
   font-weight: 600;
   font-size: 0.9rem;
@@ -55,57 +55,57 @@ $fontNavbar: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
 }
 #mainNavbar .navbar-nav .nav-item .nav-link:hover,
 #mainNavbar .navbar-nav .nav-item .nav-link:active {
-  color: $textColorHover;
+  color: $text-color-hover;
 }
 #mainNavbar .navbar-nav .nav-item .nav-link.active {
-  color: $textColorHover !important;
+  color: $text-color-hover !important;
 }
 
 // Large screens (desktops, 992px and up)
 @media (min-width: 992px) {
   #mainNavbar {
     box-shadow: none;
-    background-color: $bgColor;
+    background-color: $bg-color;
   }
   #mainNavbar .navbar-brand {
-    color: $textColor;
+    color: $text-color;
     font-size: 1.6rem;
     margin-left: 30px;
     margin-right: 100px;
   }
   #mainNavbar .navbar-brand:hover {
-    color: $textColorHover;
+    color: $text-color-hover;
   }
   #mainNavbar .navbar-nav .nav-item .nav-link {
-    color: $textColor;
+    color: $text-color;
     font-size: 1rem;
     // Navbar brad indentation (no nav-items underscore - padding: 0 1rem; )
     padding-bottom: 1px;
   }
   #mainNavbar .navbar-nav .nav-item .nav-link:hover {
-    color: $textColorHover;
+    color: $text-color-hover;
   }
   // #mainNavbar .navbar-nav .nav-item:last-child .nav-link {
   //   // Navbar brad indentation (no nav-items underscore - padding-right: 0; )
   //   padding-right: 0;
   // }
   #mainNavbar .navbar-nav .nav-item .nav-link.active {
-    border-bottom: 4px solid $textColorHover; // nav-items underscore
+    border-bottom: 4px solid $text-color-hover; // nav-items underscore
   }
   #mainNavbar.navbar-scrolled {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
-    background-color: $bgColorScrolled;
+    background-color: $bg-color-scrolled;
   }
   #mainNavbar.navbar-scrolled .navbar-brand {
-    color: $textColorScrolled;
+    color: $text-color-scrolled;
   }
   #mainNavbar.navbar-scrolled .navbar-brand:hover {
-    color: $textColorScrolledHover;
+    color: $text-color-scrolled-hover;
   }
   #mainNavbar.navbar-scrolled .navbar-nav .nav-item .nav-link {
-    color: $textColorScrolled;
+    color: $text-color-scrolled;
   }
   #mainNavbar.navbar-scrolled .navbar-nav .nav-item .nav-link:hover {
-    color: $textColorScrolledHover;
+    color: $text-color-scrolled-hover;
   }
 }
