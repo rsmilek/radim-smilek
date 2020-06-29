@@ -4,7 +4,7 @@ import "./src/styles/global.scss";
 
 // Styles for NAVBAR
 //import "bootstrap/dist/css/bootstrap.min.css";
-import "./src/styles/myNavbar.scss"; // Core theme CSS (includes Bootstrap)
+import "./src/styles/mainNavbar.scss"; // Core theme CSS (includes Bootstrap)
 
 // JS
 import "bootstrap/dist/js/bootstrap.bundle.min.js"; // Bootstrap core JS
