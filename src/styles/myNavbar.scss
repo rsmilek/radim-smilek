@@ -21,19 +21,19 @@ $bgColorScrolled: $colorPrimaryMain;
 $fontNavbar: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
   Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
-#myNavbar {
+#mainNavbar {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   background-color: $bgColorScrolled;
   transition: background-color 0.2s ease;
 }
 
-#myNavbar .navbar-brand {
+#mainNavbar .navbar-brand {
   color: $textColorScrolled;
   font-family: $fontNavbar;
   font-weight: 700;
   font-size: 1.3rem;
 }
-#myNavbar .navbar-brand:hover {
+#mainNavbar .navbar-brand:hover {
   color: $textColorHover;
 }
 
@@ -44,7 +44,7 @@ $fontNavbar: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
   border-color: $textColorScrolled;
 }
 
-#myNavbar .navbar-nav .nav-item .nav-link {
+#mainNavbar .navbar-nav .nav-item .nav-link {
   color: $textColorScrolled;
   font-family: $fontNavbar;
   font-weight: 600;
@@ -53,59 +53,59 @@ $fontNavbar: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
   margin-right: 10px;
   margin-left: 10px;
 }
-#myNavbar .navbar-nav .nav-item .nav-link:hover,
-#myNavbar .navbar-nav .nav-item .nav-link:active {
+#mainNavbar .navbar-nav .nav-item .nav-link:hover,
+#mainNavbar .navbar-nav .nav-item .nav-link:active {
   color: $textColorHover;
 }
-#myNavbar .navbar-nav .nav-item .nav-link.active {
+#mainNavbar .navbar-nav .nav-item .nav-link.active {
   color: $textColorHover !important;
 }
 
 // Large screens (desktops, 992px and up)
 @media (min-width: 992px) {
-  #myNavbar {
+  #mainNavbar {
     box-shadow: none;
     background-color: $bgColor;
   }
-  #myNavbar .navbar-brand {
+  #mainNavbar .navbar-brand {
     color: $textColor;
     font-size: 1.6rem;
     margin-left: 30px;
     margin-right: 100px;
   }
-  #myNavbar .navbar-brand:hover {
+  #mainNavbar .navbar-brand:hover {
     color: $textColorHover;
   }
-  #myNavbar .navbar-nav .nav-item .nav-link {
+  #mainNavbar .navbar-nav .nav-item .nav-link {
     color: $textColor;
     font-size: 1rem;
     // Navbar brad indentation (no nav-items underscore - padding: 0 1rem; )
     padding-bottom: 1px;
   }
-  #myNavbar .navbar-nav .nav-item .nav-link:hover {
+  #mainNavbar .navbar-nav .nav-item .nav-link:hover {
     color: $textColorHover;
   }
-  // #myNavbar .navbar-nav .nav-item:last-child .nav-link {
+  // #mainNavbar .navbar-nav .nav-item:last-child .nav-link {
   //   // Navbar brad indentation (no nav-items underscore - padding-right: 0; )
   //   padding-right: 0;
   // }
-  #myNavbar .navbar-nav .nav-item .nav-link.active {
+  #mainNavbar .navbar-nav .nav-item .nav-link.active {
     border-bottom: 4px solid $textColorHover; // nav-items underscore
   }
-  #myNavbar.navbar-scrolled {
+  #mainNavbar.navbar-scrolled {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
     background-color: $bgColorScrolled;
   }
-  #myNavbar.navbar-scrolled .navbar-brand {
+  #mainNavbar.navbar-scrolled .navbar-brand {
     color: $textColorScrolled;
   }
-  #myNavbar.navbar-scrolled .navbar-brand:hover {
+  #mainNavbar.navbar-scrolled .navbar-brand:hover {
     color: $textColorScrolledHover;
   }
-  #myNavbar.navbar-scrolled .navbar-nav .nav-item .nav-link {
+  #mainNavbar.navbar-scrolled .navbar-nav .nav-item .nav-link {
     color: $textColorScrolled;
   }
-  #myNavbar.navbar-scrolled .navbar-nav .nav-item .nav-link:hover {
+  #mainNavbar.navbar-scrolled .navbar-nav .nav-item .nav-link:hover {
     color: $textColorScrolledHover;
   }
 }

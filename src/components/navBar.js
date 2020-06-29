@@ -10,17 +10,17 @@ class NavBar extends Component {
 
   // Event handler - Collapse Navbar
   navbarCollapse = () => {
-    if ($("#myNavbar").offset().top > 100) {
-      $("#myNavbar").addClass("navbar-scrolled");
+    if ($("#mainNavbar").offset().top > 100) {
+      $("#mainNavbar").addClass("navbar-scrolled");
     } else {
-      $("#myNavbar").removeClass("navbar-scrolled");
+      $("#mainNavbar").removeClass("navbar-scrolled");
     }
   };
 
   componentDidMount() {
     // Activate scrollspy to add active class to navbar items on scroll
     $("body").scrollspy({
-      target: "#myNavbar",
+      target: "#mainNavbar",
       offset: 75,
     });
     // Closes responsive menu when a scroll trigger link is clicked
@@ -61,7 +61,7 @@ class NavBar extends Component {
   render() {
     return (
       <div id="pageTop">
-        <nav className="navbar navbar-expand-lg fixed-top" id="myNavbar">
+        <nav className="navbar navbar-expand-lg fixed-top" id="mainNavbar">
           {/* Button (Hamburger menu) at first means to be most left in navigation bar on collapse */}
           <button
             className="navbar-toggler"
@@ -93,17 +93,17 @@ class NavBar extends Component {
           <div className="collapse navbar-collapse order-3 order-lg-2" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
-                <a className="nav-link js-scroll-trigger" href="#myNavbarHome">
+                <a className="nav-link js-scroll-trigger" href="#mainNavbarHome">
                   Home
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link js-scroll-trigger" href="#myNavbarLink">
+                <a className="nav-link js-scroll-trigger" href="#mainNavbarLink">
                   Link
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link js-scroll-trigger" href="#myNavbarDisabled">
+                <a className="nav-link js-scroll-trigger" href="#mainNavbarDisabled">
                   Disabled
                 </a>
               </li>
@@ -114,25 +114,25 @@ class NavBar extends Component {
         <div className="mt-5">
           <p className="p-5 m-5"></p>
           <p className="p-5 m-5"></p>
-          <section id="myNavbarHome">
+          <section id="mainNavbarHome">
             <p className="p-5 m-5">Home</p>
           </section>
-          <section id="myNavbarLink">
+          <section id="mainNavbarLink">
             <p className="p-5 m-5">Link</p>
           </section>
-          <section id="myNavbarDropdown">
+          <section id="mainNavbarDropdown">
             <p className="p-5 m-5">Dropdown</p>
           </section>
-          <section id="myNavbarAction">
+          <section id="mainNavbarAction">
             <p className="p-5 m-5">Action</p>
           </section>
-          <section id="myNavbarAnother">
+          <section id="mainNavbarAnother">
             <p className="p-5 m-5">Another</p>
           </section>
-          <section id="myNavbarSomething">
+          <section id="mainNavbarSomething">
             <p className="p-5 m-5">Something</p>
           </section>
-          <section id="myNavbarDisabled">
+          <section id="mainNavbarDisabled">
             <p className="p-5 m-5">Disabled</p>
           </section>
         </div>
