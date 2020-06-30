@@ -62,52 +62,54 @@ export default class MainNavbar extends Component {
     return (
       <div id="pageTop">
         <nav className="navbar navbar-expand-lg fixed-top" id="mainNavbar">
-          {/* Button (Hamburger menu) at first means to be most left in navigation bar on collapse */}
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          {/* First in DOM, no order applied */}
-          <a className="navbar-brand js-scroll-trigger" href="#pageTop">
-            Navbar
-          </a>
-          {/* Second in DOM, order 2, re-order 3 on large screens
+          <div className="container">
+            {/* Button (Hamburger menu) at first means to be most left in navigation bar on collapse */}
+            <button
+              className="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            {/* First in DOM, no order applied */}
+            <a className="navbar-brand js-scroll-trigger" href="#pageTop">
+              Navbar
+            </a>
+            {/* Second in DOM, order 2, re-order 3 on large screens
               NOTE: Items to always show keep out of the navbar-collapse div */}
-          <div className="d-flex flex-row order-2 order-lg-3">
-            <ul className="navbar-nav flex-row">
-              <li className="nav-item">
-                <span className="nav-link px-2">
-                  <ThemeChanger />
-                </span>
-              </li>
-            </ul>
-          </div>
-          {/* Third in DOM, order 3, re-order 2 on large screens */}
-          <div className="collapse navbar-collapse order-3 order-lg-2" id="navbarSupportedContent">
-            <ul className="navbar-nav mr-auto">
-              <li className="nav-item">
-                <a className="nav-link js-scroll-trigger" href="#mainNavbarHome">
-                  Home
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link js-scroll-trigger" href="#mainNavbarLink">
-                  Link
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link js-scroll-trigger" href="#mainNavbarDisabled">
-                  Disabled
-                </a>
-              </li>
-            </ul>
+            <div className="d-flex flex-row order-2 order-lg-3">
+              <ul className="navbar-nav flex-row">
+                <li className="nav-item">
+                  <span className="nav-link px-2">
+                    <ThemeChanger />
+                  </span>
+                </li>
+              </ul>
+            </div>
+            {/* Third in DOM, order 3, re-order 2 on large screens */}
+            <div className="collapse navbar-collapse order-3 order-lg-2" id="navbarSupportedContent">
+              <ul className="navbar-nav ml-auto">
+                <li className="nav-item">
+                  <a className="nav-link js-scroll-trigger" href="#mainNavbarHome">
+                    Home
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link js-scroll-trigger" href="#mainNavbarLink">
+                    Link
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link js-scroll-trigger" href="#mainNavbarDisabled">
+                    Disabled
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </nav>
 
