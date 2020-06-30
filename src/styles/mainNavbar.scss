@@ -53,6 +53,11 @@ $width-lg: 992px; // Large screen width threshold
   font-size: $font-size;
 }
 
+// Defines navbar bottom
+@mixin navbar-border-bottom($color) {
+  border-bottom: 4px solid $color;
+}
+
 //
 // DEFINES navbar LOOK & BEHAVIOUR
 //
@@ -85,7 +90,7 @@ $width-lg: 992px; // Large screen width threshold
       margin-right: 10px;
       margin-left: 10px;
       padding-bottom: 1px; // nav-items horizontal alignment
-      border-bottom: 4px solid transparent; // nav-items underscore - fake
+      @include navbar-border-bottom(transparent); // nav-items underscore - fake
     }
     &:hover,
     &:active {
@@ -94,7 +99,7 @@ $width-lg: 992px; // Large screen width threshold
     &.active {
       color: var(--text-color-hover);
       @media (min-width: $width-lg) {
-        border-bottom: 4px solid var(--text-color-hover); // nav-items underscore - genuine
+        @include navbar-border-bottom(var(--text-color-hover)); // nav-items underscore - genuine
       }
     }
   }
