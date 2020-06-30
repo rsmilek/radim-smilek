@@ -2,13 +2,13 @@ $color-primary-light: #ff8a50;
 $color-primary-main: #ff5722;
 $color-primary-dark: #c41c00;
 $color-primary-text: rgb(255, 255, 255);
-$color-primary-contrast-text: rgba(0, 0, 0, 0.9);
+$color-primary-text-contrast: rgba(0, 0, 0, 0.9);
 
 $color-secondary-light: #006758;
 $color-secondary-main: #009688;
 $color-secondary-dark: #52c78b;
 $color-secondary-text: rgb(255, 255, 255);
-$color-secondary-contrast-text: rgba(0, 0, 0, 0.7);
+$color-secondary-text-contrast: rgba(0, 0, 0, 0.7);
 
 $font-navbar: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
   Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -19,7 +19,7 @@ $width-lg: 992px; // Large screen width threshold
 @mixin navbar-mobile-scrolled-colors() {
   --bg-color: #{$color-primary-main};
   --text-color: #{$color-primary-text};
-  --text-color-hover: #{$color-primary-contrast-text};
+  --text-color-hover: #{$color-primary-text-contrast};
 }
 
 //
@@ -32,7 +32,7 @@ $width-lg: 992px; // Large screen width threshold
   @media (min-width: $width-lg) {
     --bg-color: transparent;
     --text-color: #{$color-primary-main};
-    --text-color-hover: #{$color-primary-contrast-text};
+    --text-color-hover: #{$color-primary-text-contrast};
   }
 }
 // Defines navbar colors if page is scrolled down, they are same as for MOBILE screen
