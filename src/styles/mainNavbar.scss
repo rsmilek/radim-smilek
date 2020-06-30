@@ -40,12 +40,13 @@ $width-lg: 992px; // Large screen width threshold
   @include navbar-mobile-scrolled-colors();
 }
 
-// Defines navbar shadow box - MOBILE screen &
+// Defines navbar shadow box - MOBILE screen & page scroll
 @mixin navbar-box() {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
   transition: background-color 0.2s ease;
 }
 
+// Defines navbar brand/item font
 @mixin navbar-font($font-weight, $font-size) {
   font-family: $font-navbar;
   font-weight: $font-weight;
@@ -69,10 +70,8 @@ $width-lg: 992px; // Large screen width threshold
   .navbar-brand {
     color: var(--text-color);
     @include navbar-font(700, 1.3rem);
-    /////margin-right: 200px;// ??? Pushes NavBar Brand to left on mobile
     @media (min-width: $width-lg) {
       @include navbar-font(700, 1.6rem);
-      // margin-right: 100px; // Space between brand and items
     }
     &:hover {
       color: var(--text-color-hover);
