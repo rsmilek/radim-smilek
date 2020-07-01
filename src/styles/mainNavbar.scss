@@ -30,7 +30,7 @@ $widthLg: 992px; // Large screen width threshold
 
 // Defines navbar shadow box - MOBILE screen & page scrolled
 @mixin navbar-box() {
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0.1rem 0.6rem var(--navbar-box-color);
   transition: background-color 0.2s ease;
 }
 

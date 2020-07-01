@@ -43,6 +43,7 @@ body.light {
   --color-primary-main: #{$colorPrimaryMain};
   --color-primary-text: #{$colorPrimaryText};
   --color-primary-text-contrast: #{$colorSecondaryDark};
+  --navbar-box-color: black;
 }
 body.dark {
   --primary-color: #9984d5;
@@ -68,6 +69,7 @@ body.dark {
   --color-primary-main: #{$colorPrimaryMain};
   --color-primary-text: #{$colorPrimaryText};
   --color-primary-text-contrast: #{$colorSecondaryDark};
+  --navbar-box-color: white;
 }
 
 /* System Fonts as used by Medium and WordPress */
