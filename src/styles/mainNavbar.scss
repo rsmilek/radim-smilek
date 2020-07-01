@@ -41,10 +41,10 @@ $widthLg: 992px; // Large screen width threshold
 }
 
 // Defines navbar brand/item font
-@mixin navbar-font($font-weight, $font-size) {
+@mixin navbar-font($fontWeight, $fontSize) {
   font-family: $fontNavbar;
-  font-weight: $font-weight;
-  font-size: $font-size;
+  font-weight: $fontWeight;
+  font-size: $fontSize;
 }
 
 // Defines navbar bottom
