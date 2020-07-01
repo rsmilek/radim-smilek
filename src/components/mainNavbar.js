@@ -65,7 +65,7 @@ export default class MainNavbar extends Component {
           <div className="container">
             {/* Button (Hamburger menu) at first means to be most left in navigation bar on collapse */}
             <button
-              className="navbar-toggler"
+              className="navbar-toggler mr-4"
               type="button"
               data-toggle="collapse"
               data-target="#navbarSupportedContent"
@@ -76,15 +76,15 @@ export default class MainNavbar extends Component {
               <span className="navbar-toggler-icon"></span>
             </button>
             {/* First in DOM, no order applied */}
-            <a className="navbar-brand js-scroll-trigger" href="#pageTop">
+            <a className="navbar-brand js-scroll-trigger mr-auto" href="#pageTop">
               Navbar
             </a>
             {/* Second in DOM, order 2, re-order 3 on large screens
               NOTE: Items to always show keep out of the navbar-collapse div */}
             <div className="d-flex flex-row order-2 order-lg-3">
               <ul className="navbar-nav flex-row">
-                <li className="nav-item">
-                  <span className="nav-link px-2">
+                <li className="nav-item ml-5 mt-2">
+                  <span className="nav-link">
                     <ThemeChanger />
                   </span>
                 </li>
