@@ -1,6 +1,18 @@
 $font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell,
   "Helvetica Neue", sans-serif;
 
+$colorPrimaryLight: #ff8a50;
+$colorPrimaryMain: #ff5722;
+$colorPrimaryDark: #c41c00;
+$colorPrimaryText: rgb(255, 255, 255);
+$colorPrimaryTextContrast: rgba(0, 0, 0, 0.9);
+
+$colorSecondaryLight: #52c78b;
+$colorSecondaryMain: #009688;
+$colorSecondaryDark: #006758;
+$colorSecondaryText: rgb(255, 255, 255);
+$colorSecondaryTextContrast: rgba(0, 0, 0, 0.9);
+
 html,
 body {
   margin: 0;
@@ -28,6 +40,9 @@ body.light {
   --contact-bg: #f7f8fe;
   --contact-bdr: #d3d6e7;
   --input-bg: var(--background);
+  --color-primary-main: #{$colorPrimaryMain};
+  --color-primary-text: #{$colorPrimaryText};
+  --color-primary-text-contrast: #{$colorSecondaryDark};
 }
 body.dark {
   --primary-color: #9984d5;
@@ -50,7 +65,11 @@ body.dark {
   --contact-bg: var(--card-shadow);
   --contact-bdr: var(--card-bg);
   --input-bg: var(--card-bg);
+  --color-primary-main: #{$colorPrimaryMain};
+  --color-primary-text: #{$colorPrimaryText};
+  --color-primary-text-contrast: #{$colorSecondaryDark};
 }
+
 /* System Fonts as used by Medium and WordPress */
 body {
   font-family: $font-family;
@@ -314,7 +333,9 @@ a {
   }
 }
 
-// theme-changer
+/*
+ * theme-changer
+ */
 .theme-changer {
   display: none;
 }
@@ -393,3 +414,8 @@ body.light {
   top: 8px;
   left: 2px;
 }
+
+/*
+ * mainNavbar
+ */
+@import "./mainNavbar";
