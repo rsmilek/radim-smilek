@@ -1,38 +1,38 @@
-$color-primary-light: #ff8a50;
-$color-primary-main: #ff5722;
-$color-primary-dark: #c41c00;
-$color-primary-text: rgb(255, 255, 255);
-$color-primary-text-contrast: rgba(0, 0, 0, 0.9);
+$colorPrimaryLight: #ff8a50;
+$colorPrimaryMain: #ff5722;
+$colorPrimaryDark: #c41c00;
+$colorPrimaryText: rgb(255, 255, 255);
+$colorPrimaryTextContrast: rgba(0, 0, 0, 0.9);
 
-$color-secondary-light: #006758;
-$color-secondary-main: #009688;
-$color-secondary-dark: #52c78b;
-$color-secondary-text: rgb(255, 255, 255);
-$color-secondary-text-contrast: rgba(0, 0, 0, 0.7);
+$colorSecondaryLight: #006758;
+$colorSecondaryMain: #009688;
+$colorSecondaryDark: #52c78b;
+$colorSecondaryText: rgb(255, 255, 255);
+$colorSecondaryTextContrast: rgba(0, 0, 0, 0.9);
 
-$font-navbar: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+$fontNavbar: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
   Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
-$width-lg: 992px; // Large screen width threshold
+$widthLg: 992px; // Large screen width threshold
 
 // Defines navbar colors for MOBILE screen & page scrolled down
 @mixin navbar-mobile-scrolled-colors() {
-  --bg-color: #{$color-primary-main};
-  --text-color: #{$color-primary-text};
-  --text-color-hover: #{$color-primary-text-contrast};
+  --bg-color: #{$colorPrimaryMain};
+  --text-color: #{$colorPrimaryText};
+  --text-color-hover: #{$colorPrimaryTextContrast};
 }
 
-//
-// DEFINES navbar COLORS FOR EACH SCREEN
-//
+/*
+ * DEFINES navbar COLORS FOR EACH SCREEN
+ */
 #mainNavbar {
   // Screen - MOBILE
   @include navbar-mobile-scrolled-colors();
   // Screen - DESKTOP
-  @media (min-width: $width-lg) {
+  @media (min-width: $widthLg) {
     --bg-color: transparent;
-    --text-color: #{$color-primary-main};
-    --text-color-hover: #{$color-primary-text-contrast};
+    --text-color: #{$colorPrimaryMain};
+    --text-color-hover: #{$colorPrimaryTextContrast};
   }
 }
 // Defines navbar colors if page is scrolled down, they are same as for MOBILE screen
@@ -48,7 +48,7 @@ $width-lg: 992px; // Large screen width threshold
 
 // Defines navbar brand/item font
 @mixin navbar-font($font-weight, $font-size) {
-  font-family: $font-navbar;
+  font-family: $fontNavbar;
   font-weight: $font-weight;
   font-size: $font-size;
 }
@@ -58,16 +58,16 @@ $width-lg: 992px; // Large screen width threshold
   border-bottom: 4px solid $color;
 }
 
-//
-// DEFINES navbar LOOK & BEHAVIOUR
-//
+/*
+ * DEFINES navbar LOOK & BEHAVIOUR
+ */
 #mainNavbar {
   background-color: var(--bg-color);
-  @media (max-width: $width-lg) {
+  @media (max-width: $widthLg) {
     @include navbar-box();
   }
   .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$color-primary-text}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$colorPrimaryText}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
   }
   .navbar-toggler {
     border-color: var(--text-color);
@@ -75,7 +75,7 @@ $width-lg: 992px; // Large screen width threshold
   .navbar-brand {
     color: var(--text-color);
     @include navbar-font(700, 1.3rem);
-    @media (min-width: $width-lg) {
+    @media (min-width: $widthLg) {
       @include navbar-font(700, 1.6rem);
     }
     &:hover {
@@ -85,7 +85,7 @@ $width-lg: 992px; // Large screen width threshold
   .navbar-nav .nav-item .nav-link {
     color: var(--text-color);
     @include navbar-font(600, 0.9rem);
-    @media (min-width: $width-lg) {
+    @media (min-width: $widthLg) {
       @include navbar-font(600, 1.1rem);
       margin-right: 10px;
       margin-left: 10px;
@@ -98,7 +98,7 @@ $width-lg: 992px; // Large screen width threshold
     }
     &.active {
       color: var(--text-color-hover);
-      @media (min-width: $width-lg) {
+      @media (min-width: $widthLg) {
         @include navbar-border-bottom(var(--text-color-hover)); // nav-items underscore - genuine
       }
     }
