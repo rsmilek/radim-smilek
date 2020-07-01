@@ -83,7 +83,7 @@ export default class MainNavbar extends Component {
               NOTE: Items to always show keep out of the navbar-collapse div */}
             <div className="d-flex flex-row order-2 order-lg-3">
               <ul className="navbar-nav flex-row">
-                <li className="nav-item ml-5 mt-2">
+                <li className="nav-item ml-5">
                   <span className="nav-link">
                     <ThemeChanger />
                   </span>
