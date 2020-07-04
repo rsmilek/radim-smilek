@@ -1,0 +1,17 @@
+.contactme {
+  input,
+  textarea {
+    color: var(--text-color);
+    background-color: var(--contactme-bg);
+    border-top: transparent;
+    border-right: transparent;
+    border-bottom: 2px solid var(--primary-color);
+    border-left: transparent;
+    &:focus {
+      outline: none; // Disable outline on focus
+    }
+  }
+  textarea {
+    height: 170px;
+  }
+}

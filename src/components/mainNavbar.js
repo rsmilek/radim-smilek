@@ -108,6 +108,11 @@ export default class MainNavbar extends Component {
                     Disabled
                   </a>
                 </li>
+                <li className="nav-item">
+                  <a className="nav-link js-scroll-trigger" href="#contactme">
+                    Contact
+                  </a>
+                </li>
               </ul>
             </div>
           </div>

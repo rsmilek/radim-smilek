@@ -5,6 +5,7 @@ import Layout from "../components/layout";
 import PostLink from "../components/post-link";
 import HeroHeader from "../components/heroHeader";
 import MainNavbar from "../components/mainNavbar";
+import ContactMe from "../components/contactMe";
 
 const IndexPage = ({
   data: {
@@ -23,6 +24,7 @@ const IndexPage = ({
         <meta name="description" content={site.siteMetadata.description} />
       </Helmet>
       <MainNavbar />
+      <ContactMe />
       <HeroHeader />
       <h2>Blog Posts &darr;</h2>
       <div className="grids">{Posts}</div>
