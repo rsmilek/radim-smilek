@@ -1,6 +1,7 @@
 import React from "react";
 // import { Link, useStaticQuery, graphql } from "gatsby";
 // import Navigation from "../components/navigation";
+import Footer from "../components/footer";
 import "prismjs/themes/prism-okaidia.css";
 
 export default ({ children }) => {
@@ -24,7 +25,7 @@ export default ({ children }) => {
         {/* <Navigation /> */}
       </header>
       {children}
-      <footer className="site-footer">
+      {/* <footer className="site-footer">
         <p>
           &copy; {new Date().getFullYear()} Delog &bull; Crafted with{" "}
           <span role="img" aria-label="love">
@@ -32,7 +33,8 @@ export default ({ children }) => {
           </span>{" "}
           by <a href="https://w3layouts.com">W3Layouts</a>
         </p>
-      </footer>
+      </footer> */}
+      <Footer />
     </div>
   );
 };

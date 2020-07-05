@@ -296,14 +296,15 @@ a {
   font-size: 0.8rem;
   color: var(--text-secondary-color);
 }
-.site-footer {
-  text-align: center;
-  margin: 90px 0 16px;
-  color: #666;
-  a {
-    font-weight: 700;
-  }
-}
+// RSm
+// .site-footer {
+//   text-align: center;
+//   margin: 90px 0 16px;
+//   color: #666;
+//   a {
+//     font-weight: 700;
+//   }
+// }
 .form-container {
   background-color: var(--contact-bg);
   padding: 32px;
@@ -449,3 +450,8 @@ body.light {
  * Component - contactMe
  */
 @import "./contactMe";
+
+/*
+ * Component - footer
+ */
+@import "./footer";
