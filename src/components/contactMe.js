@@ -1,7 +1,18 @@
 import React, { Component } from "react";
+import IconEmail from "../../static/assets/social/email.svg";
+import IconLinkedin from "../../static/assets/social/linkedin.svg";
+import IconGithub from "../../static/assets/social/github.svg";
+import IconFacebook from "../../static/assets/social/facebook.svg";
+import IconInstagram from "../../static/assets/social/instagram.svg";
 
-class ContactMe extends Component {
+export default class ContactMe extends Component {
   render() {
+    const SocialIcon = ({ icon, href }) => (
+      <a className="social-icon" href={href} target="_blank" rel="noopener noreferrer">
+        {icon}
+      </a>
+    );
+
     return (
       <div className="container" id="contactme">
         <div className="row">
@@ -10,6 +21,13 @@ class ContactMe extends Component {
             <div className="primary-content">
               I am interested freelance opportunities - especially ambitious or large projects. However, if
               you have other request or question, do not hesitate to contact me using beside form either.
+            </div>
+            <div className="social">
+              <SocialIcon icon={<IconEmail />} href="mailto:smilek.radim@gmail.com" />
+              <SocialIcon icon={<IconLinkedin />} href="https://www.linkedin.com/in/smilekradim/" />
+              <SocialIcon icon={<IconGithub />} href="https://github.com/rsmilek" />
+              <SocialIcon icon={<IconFacebook />} href="https://www.facebook.com/radim.smilek" />
+              <SocialIcon icon={<IconInstagram />} href="https://www.instagram.com/smilek.radim/" />
             </div>
           </div>
           <div className="col-md">
@@ -46,5 +64,3 @@ class ContactMe extends Component {
     );
   }
 }
-
-export default ContactMe;

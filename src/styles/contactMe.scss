@@ -1,3 +1,22 @@
+.social {
+  margin: 0 0 32px;
+}
+.social-icon {
+  margin-right: 10px;
+  svg {
+    width: 42px;
+    height: 42px;
+    path {
+      fill: var(--primary-color);
+    }
+    &:hover {
+      path {
+        fill: var(--secondary-color);
+      }
+    }
+  }
+}
+
 .contactme {
   input,
   textarea {
