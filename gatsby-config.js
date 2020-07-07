@@ -55,6 +55,14 @@ module.exports = {
         icon: "src/images/icon.png",
       },
     },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /assets/ // Where the animated svg-s are.
+        }
+      }
+    },
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-netlify-cms`,
