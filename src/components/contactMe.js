@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import SocialIcon from "./SocialIcon";
 import IconEmail from "../../static/assets/social/email.svg";
 import IconLinkedin from "../../static/assets/social/linkedin.svg";
 import IconGithub from "../../static/assets/social/github.svg";
@@ -7,12 +8,6 @@ import IconInstagram from "../../static/assets/social/instagram.svg";
 
 export default class ContactMe extends Component {
   render() {
-    const SocialIcon = ({ icon, href }) => (
-      <a className="social-icon" href={href} target="_blank" rel="noopener noreferrer">
-        {icon}
-      </a>
-    );
-
     return (
       <div className="container" id="contactme">
         <div className="row">
