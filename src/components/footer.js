@@ -8,12 +8,12 @@ export default class Footer extends Component {
       <footer className="footer">
         <p>
           Copyright &copy; {new Date().getFullYear()} &bull; Designed &amp; developed by Radim Smílek with{" "}
-          <a href="https://www.gatsbyjs.org/">
+          <a href="https://www.gatsbyjs.org/" target="_blank" rel="noopener noreferrer">
             Gatsby
             {<IconGatsby className="footer-icon" />}
           </a>{" "}
           &amp;{" "}
-          <a href="https://www.netlify.com/">
+          <a href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer">
             Netlify
             {<IconNetlify className="footer-icon" />}
           </a>
