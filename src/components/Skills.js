@@ -44,8 +44,10 @@ const Skill = ({ header, icons }) => {
     <React.Fragment>
       <div className="skill-header">{header}</div>
       <div className="row skill-icons">
-        {icons.map((icon) => (
-          <div className="skill-icon">{icon}</div>
+        {icons.map((icon, index) => (
+          <div key={index} className="skill-icon">
+            {icon}
+          </div>
         ))}
       </div>
     </React.Fragment>
@@ -111,7 +113,13 @@ export default class Skills extends Component {
         />
         <Skill
           header="Test/Measurement &amp; IoT"
-          icons={[<IconNationalInstruments />, <IconLabview />, <IconArduino/>, <IconRaspberrypi />, <IconZigbee />]}
+          icons={[
+            <IconNationalInstruments />,
+            <IconLabview />,
+            <IconArduino />,
+            <IconRaspberrypi />,
+            <IconZigbee />,
+          ]}
         />
       </div>
     );
