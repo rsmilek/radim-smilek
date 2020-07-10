@@ -4,5 +4,55 @@
   color: #666;
   p {
     font-weight: 600;
+    a {
+      .footer-icon {
+        margin-left: 5px;
+        width: 24px;
+        height: 24px;
+        fill: var(--primary-color);
+        &:hover {
+          fill: var(--secondary-color);
+        }
+      }
+    }
+  }
+  .pokus {
+    margin-left: 5px;
+    width: 24px;
+    height: 24px;
+    fill: var(--primary-color);
+    &:hover {
+      fill: var(--secondary-color);
+    }
+    svg {
+      path {
+        fill: var(--primary-color);
+      }
+      &:hover {
+        path {
+          fill: var(--secondary-color);
+        }
+      }
+    }
   }
 }
+// .footer {
+//   text-align: center;
+//   margin: 32px 0 16px;
+//   color: #666;
+//   p {
+//     font-weight: 600;
+//     a {
+//       .footer-icon {
+//         margin-left: 5px;
+//         width: 24px;
+//         height: 24px;
+//         svg {
+//           path {
+//             fill: var(--primary-color);
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
