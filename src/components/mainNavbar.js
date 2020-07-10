@@ -104,8 +104,8 @@ export default class MainNavbar extends Component {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link js-scroll-trigger" href="#mainNavbarDisabled">
-                    Disabled
+                  <a className="nav-link js-scroll-trigger" href="#skills">
+                    Skills
                   </a>
                 </li>
                 <li className="nav-item">

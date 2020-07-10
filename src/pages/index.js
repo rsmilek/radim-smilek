@@ -6,6 +6,7 @@ import PostLink from "../components/post-link";
 import HeroHeader from "../components/heroHeader";
 import MainNavbar from "../components/mainNavbar";
 import ContactMe from "../components/contactMe";
+import Skills from "../components/Skills";
 
 const IndexPage = ({
   data: {
@@ -24,6 +25,7 @@ const IndexPage = ({
         <meta name="description" content={site.siteMetadata.description} />
       </Helmet>
       <MainNavbar />
+      <Skills />
       <ContactMe />
       <HeroHeader />
       <h2>Blog Posts &darr;</h2>

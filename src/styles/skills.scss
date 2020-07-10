@@ -1,0 +1,19 @@
+.skills {
+  margin-bottom: 64px;
+  .skill-header {
+    margin-bottom: 10px;
+  }
+  .skill-icons {
+    margin-left: 0px;
+  }
+  .skill-icon {
+    margin-right: 15px;
+    width: 48px;
+    height: 48px;
+    svg {
+      path {
+        fill: #6c757d;
+      }
+    }
+  }
+}
