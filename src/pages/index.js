@@ -25,7 +25,7 @@ const IndexPage = ({
         <meta name="description" content={site.siteMetadata.description} />
       </Helmet>
       <MainNavbar />
-      <Skills />
+      {/* <Skills /> */}
       <ContactMe />
       <HeroHeader />
       <h2>Blog Posts &darr;</h2>

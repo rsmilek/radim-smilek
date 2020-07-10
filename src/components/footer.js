@@ -2,22 +2,21 @@ import React, { Component } from "react";
 import IconGatsby from "../../static/assets/skills/gatsby.svg";
 import IconNetlify from "../../static/assets/skills/netlify.svg";
 
+const FooterIconLink = ({ title, href, icon }) => {
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer">
+      {title} <div className="footer-icon baseline">{icon}</div>
+    </a>
+  );
+};
+
 export default class Footer extends Component {
   render() {
     return (
-      <footer className="footer">
-        <p>
-          Copyright &copy; {new Date().getFullYear()} &bull; Designed &amp; developed by Radim Smílek with{" "}
-          <a href="https://www.gatsbyjs.org/" target="_blank" rel="noopener noreferrer">
-            Gatsby
-            {<IconGatsby className="footer-icon" />}
-          </a>{" "}
-          &amp;{" "}
-          <a href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer">
-            Netlify
-            {<IconNetlify className="footer-icon" />}
-          </a>
-        </p>
+      <footer className="container footer">
+        Copyright &copy; {new Date().getFullYear()} &bull; Designed &amp; developed by Radim Smílek with{" "}
+        <FooterIconLink title="Gatsby" href="https://www.gatsbyjs.org/" icon={<IconGatsby />} /> &amp;{" "}
+        <FooterIconLink title="Netlify" href="https://www.netlify.com/" icon={<IconNetlify />} />
       </footer>
     );
   }
