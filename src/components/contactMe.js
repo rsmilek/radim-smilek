@@ -13,6 +13,10 @@ const SocialIcon = ({ icon, href }) => {
   );
 };
 
+const ContactInput = ({ id, type, placeholder }) => {
+  return <input className="p-1 mb-2" type={type} name={id} id={id} placeholder={placeholder} />;
+};
+
 export default class ContactMe extends Component {
   render() {
     return (
@@ -39,21 +43,9 @@ export default class ContactMe extends Component {
               method="post"
             >
               <div className="d-flex flex-column primary-content">
-                <input className="p-1 mb-2" type="text" name="w3lName" id="w3lName" placeholder="Name" />
-                <input
-                  className="p-1 mb-2"
-                  type="email"
-                  name="w3lSender"
-                  id="w3lSender"
-                  placeholder="Email"
-                />
-                <input
-                  className="p-1 mb-2"
-                  type="text"
-                  name="w3lSubject"
-                  id="w3lSubject"
-                  placeholder="Subject"
-                />
+                <ContactInput id="w3lName" type="text" placeholder="Name" />
+                <ContactInput id="w3lSender" type="email" placeholder="Email" />
+                <ContactInput id="w3lSubject" type="text" placeholder="Subject" />
                 <textarea className="p-1" name="w3lMessage" id="w3lMessage" placeholder="Message" />
               </div>
               <div className="d-flex flex-row-reverse">
