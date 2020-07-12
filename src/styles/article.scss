@@ -1,0 +1,22 @@
+.article-title {
+  font-size: 36px;
+  font-weight: 900;
+}
+.article-title.inline {
+  display: inline-flex;
+  margin-right: 30px;
+  margin-bottom: -6px;
+}
+
+.article-subtitle {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.article-paragraph {
+  font-size: 18px;
+  font-weight: 300;
+}
+.article-paragraph.inline {
+  display: inline;
+}

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Article from "./Article";
 // Icons - Programming languages
 import IconC from "../../static/assets/skills/c.svg";
 import IconCss3 from "../../static/assets/skills/css3.svg";
@@ -42,7 +43,7 @@ import IconZigbee from "../../static/assets/skills/zigbee.svg";
 const Skill = ({ header, icons }) => {
   return (
     <React.Fragment>
-      <div className="skill-header">{header}</div>
+      <div className="article-subtitle skill-header">{header}</div>
       <div className="row skill-icons">
         {icons.map((icon, index) => (
           <div key={index} className="skill-icon">
@@ -58,15 +59,14 @@ export default class Skills extends Component {
   render() {
     return (
       <div className="container skills" id="skills">
-        <div className="headline">Skills</div>
-        <div className="primary-content">
-          Worked primarily with Delphi, C# and JavaScript with frameworks such as .NET, .NET Core and
-          React.js.
-        </div>
-        <div className="primary-content">
-          Experienced in both SQL and NoSQL, having worked in companies making use of MS SQL, MySQL and
-          SQLite, with personal further projects utilizing Influxdb.
-        </div>
+        <Article
+          title="Skills"
+          paragraphs={[
+            `Worked primarily with C# and JavaScript with frameworks such as .NET, .NET Core and React.js.`,
+            `Experienced in both SQL and NoSQL, having worked in companies making use of MS SQL, MySQL and
+             SQLite, with personal further projects utilizing Influxdb.`,
+          ]}
+        />
         <Skill
           header="Programming languages &amp; IDE's"
           icons={[

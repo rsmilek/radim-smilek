@@ -78,6 +78,7 @@ body.dark {
   --color-primary-text-contrast: #{$colorSecondaryDark};
   --navbar-box-color: white;
   --contactme-bg: #181326;
+  
 }
 
 //RSm, see .headline also
@@ -460,3 +461,8 @@ body.light {
  * Component - Skills
  */
 @import "./skills";
+
+/*
+ * Component - Article
+ */
+@import "./article";

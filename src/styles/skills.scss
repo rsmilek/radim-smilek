@@ -1,6 +1,7 @@
 .skills {
   margin-bottom: 64px;
   .skill-header {
+    margin-top: 24px;
     margin-bottom: 10px;
   }
   .skill-icons {
@@ -12,7 +13,7 @@
     height: 48px;
     svg {
       path {
-        fill: #6c757d;
+        fill: var(--text-secondary-color);
       }
     }
   }

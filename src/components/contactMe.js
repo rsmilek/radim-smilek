@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Article from "./Article";
 import IconEmail from "../../static/assets/social/email.svg";
 import IconLinkedin from "../../static/assets/social/linkedin.svg";
 import IconGithub from "../../static/assets/social/github.svg";
@@ -23,10 +24,14 @@ export default class ContactMe extends Component {
       <div className="container" id="contactme">
         <div className="row">
           <div className="col-md">
-            <div className="headline">Contact Me</div>
-            <div className="primary-content">
-              I am interested freelance opportunities - especially ambitious or large projects. However, if
-              you have other request or question, do not hesitate to contact me using beside form either.
+            <div className="mb-4">
+              <Article
+                title="Contact Me"
+                paragraphs={[
+                  `I am interested freelance opportunities - especially ambitious or large projects. However, if
+                   you have other request or question, do not hesitate to contact me using beside form either.`,
+                ]}
+              />
             </div>
             <div className="social">
               <SocialIcon icon={<IconEmail />} href="mailto:smilek.radim@gmail.com" />
