@@ -7,6 +7,7 @@ import HeroHeader from "../components/heroHeader";
 import MainNavbar from "../components/mainNavbar";
 import ContactMe from "../components/contactMe";
 import Skills from "../components/Skills";
+import Education from "../components/Education";
 
 const IndexPage = ({
   data: {
@@ -26,6 +27,7 @@ const IndexPage = ({
       </Helmet>
       <MainNavbar />
       <Skills />
+      <Education />
       <ContactMe />
       <HeroHeader />
       <h2>Blog Posts &darr;</h2>

@@ -2,6 +2,7 @@
   font-size: 36px;
   font-weight: 900;
 }
+
 .article-title.inline {
   display: inline-flex;
   margin-right: 30px;
@@ -11,12 +12,18 @@
 .article-subtitle {
   font-size: 18px;
   font-weight: 600;
+  margin-top: 12px;
 }
 
 .article-paragraph {
   font-size: 18px;
   font-weight: 300;
 }
+
 .article-paragraph.inline {
   display: inline;
+}
+
+.article-paragraph.italic {
+  font-style: italic;
 }
