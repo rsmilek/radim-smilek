@@ -20,7 +20,7 @@
     "sourceMap": true /* Generates corresponding '.map' file. */ /* Needed for debugging */,
     "jsx": "react" /* Specify JSX code generation: 'preserve', 'react-native', or 'react'. */
   },
-  "include": ["./src/**/*"]
+  "include": ["./src/**/*", "./static/assets/**/*"]
 }
 //
 // TAKEN FROM: https://github.com/haysclark/gatsby-starter-typescript/blob/master/tsconfig.json
