@@ -34,3 +34,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 };
+
+// To debug components with TypeScript in a web browser.
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    devtool: "eval-source-map",
+  });
+};

@@ -59,9 +59,9 @@ module.exports = {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
-          include: /assets/ // Where the animated svg-s are.
-        }
-      }
+          include: /assets/, // Where the animated svg-s are.
+        },
+      },
     },
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
@@ -70,5 +70,6 @@ module.exports = {
     // siteURL is a must for sitemap generation
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-offline`,
+    `gatsby-plugin-typescript`,
   ],
 };
