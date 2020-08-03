@@ -1,0 +1,60 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    // Prepare:
+    // 1. npm start
+    // 2. Start debugging by F5
+    // 3. Refresh page in chrome to start debugging
+    // 4. Finish debugging by disconnect
+    {
+      "name": "Launch Chrome",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:8000",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      // Prepare:
+      // 1. /usr/bin/google-chrome-stable --remote-debugging-port=9222 --user-data-dir=/tmp/chrome-debug &
+      // 2. npm start
+      // 3. Navigate to url = http://localhost:8000/
+      // 4. Start debugging by F5
+      // 5. Refresh page in chrome to start debugging
+      // 6. Finish debugging by disconnect
+      "name": "Attach to Chrome, with sourcemaps",
+      "type": "chrome",
+      "request": "attach",
+      "url": "http://localhost:8000",
+      "port": 9222,
+      "webRoot": "${workspaceRoot}/src"
+    },
+    // Debuggig of Gatsby build process, https://medium.com/@arthur.rodzkin/how-to-debug-gatsby-js-build-process-and-html-in-vs-code-6d1a31512b5b
+    // Prepare:
+    // 1. Set a breakpoint in gatsby-node.js
+    // 2. In the Debug view select “Gatsby develop” configuration.
+    // 3. Click on the green button “Start Debugging”
+    {
+      "name": "Gatsby develop",
+      "type": "node",
+      "request": "launch",
+      "protocol": "inspector",
+      "program": "${workspaceRoot}/node_modules/gatsby/dist/bin/gatsby",
+      "args": ["develop"],
+      "stopOnEntry": false,
+      "runtimeArgs": ["--nolazy"],
+      "sourceMaps": false
+    },
+    //
+    {
+      "name": "Gatsby build",
+      "type": "node",
+      "request": "launch",
+      "protocol": "inspector",
+      "program": "${workspaceRoot}/node_modules/gatsby/dist/bin/gatsby",
+      "args": ["build"],
+      "stopOnEntry": false,
+      "runtimeArgs": ["--nolazy"],
+      "sourceMaps": false
+    }
+  ]
+}
