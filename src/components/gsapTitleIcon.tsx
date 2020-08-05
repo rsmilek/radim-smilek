@@ -1,15 +1,13 @@
 import React, { Component, FunctionComponent, Fragment, RefObject, createRef } from "react";
 import gsap from "gsap";
 import Logo from "../../static/assets/skills/react-icon.svg";
-import "./gsapTitleIcon.css";
 import styles from "./gsapTitleIcon.module.css";
 
 type TDivRef = RefObject<HTMLDivElement> | null;
 type TDiv = HTMLDivElement | null;
 type TIcon = { svg: JSX.Element; title: string; iconElementRef: TDivRef; titleElementRef: TDivRef };
-type TIcons = Array<TIcon>;
 type TTitleIconProps = { icon: TIcon };
-type TTitleIconListProps = { icons: TIcons };
+type TTitleIconListProps = { icons: TIcon[] };
 
 // We can use children even though we haven't defined them in our TTitleIconProps
 const TitleIcon: FunctionComponent<TTitleIconProps> = ({ icon }) => {
@@ -40,117 +38,52 @@ const TitleIconList: FunctionComponent<TTitleIconListProps> = ({ icons }) => {
 };
 
 export default class GsapTitleIcon extends Component<{}> {
-  iconElements: TDiv[] = [];
-  titleElements: TDiv[] = [];
-  setIconRef = (el: TDiv, i: number) => {
-    this.iconElements[i] = el;
-  };
-  icons2: TIcons = [
-    { svg: <Logo />, title: "React", iconElementRef: createRef(), titleElementRef: createRef() },
-    { svg: <Logo />, title: "Angular", iconElementRef: createRef(), titleElementRef: createRef() },
-    { svg: <Logo />, title: ".NET", iconElementRef: createRef(), titleElementRef: createRef() },
-    { svg: <Logo />, title: "Visual Studio", iconElementRef: createRef(), titleElementRef: createRef() },
-    { svg: <Logo />, title: "National Instruments", iconElementRef: createRef(), titleElementRef: createRef() },
-    { svg: <Logo />, title: "Java", iconElementRef: createRef(), titleElementRef: createRef() },
+  icons2D: TIcon[][] = [
+    [
+      { svg: <Logo />, title: "React", iconElementRef: createRef(), titleElementRef: createRef() },
+      { svg: <Logo />, title: "Angular", iconElementRef: createRef(), titleElementRef: createRef() },
+      { svg: <Logo />, title: ".NET", iconElementRef: createRef(), titleElementRef: createRef() },
+      { svg: <Logo />, title: "Visual Studio", iconElementRef: createRef(), titleElementRef: createRef() },
+      { svg: <Logo />, title: "National Instruments", iconElementRef: createRef(), titleElementRef: createRef() },
+      { svg: <Logo />, title: "Java", iconElementRef: createRef(), titleElementRef: createRef() },
+    ],
+    [
+      { svg: <Logo />, title: "C", iconElementRef: createRef(), titleElementRef: createRef() },
+      { svg: <Logo />, title: "CSS5", iconElementRef: createRef(), titleElementRef: createRef() },
+      { svg: <Logo />, title: "C#", iconElementRef: createRef(), titleElementRef: createRef() },
+      { svg: <Logo />, title: "Delphi", iconElementRef: createRef(), titleElementRef: createRef() },
+    ],
   ];
   myTween = gsap.timeline({ paused: true });
 
   componentDidMount() {
-    const STAGGER = 0.3;
-    const DURATION = 6 * STAGGER;
-    const iconElements2Current: TDiv[] = this.icons2.map((item) => item.iconElementRef!.current); // ! - Non-null assertion operator
-    const titleElements2Current: TDiv[] = this.icons2.map((item) => item.titleElementRef!.current);
-    this.myTween
-      // Title - Show
-      .to(this.titleElements, { duration: DURATION, scale: 1, opacity: 1, delay: 0, stagger: STAGGER, ease: "elastic", force3D: true }, "Start")
-      // Title - Hide
-      .to(this.titleElements, { duration: DURATION, scale: 1, opacity: 0, delay: 0, stagger: STAGGER, ease: "elastic", force3D: true }, STAGGER + 0.1)
-      // Icon - Show
-      .from(this.iconElements, { duration: DURATION, scale: 0.5, opacity: 0, delay: 0, stagger: STAGGER, ease: "elastic", force3D: true }, 2 * STAGGER)
-      //
-      // Title2 - Show
-      .to(titleElements2Current, { duration: DURATION, scale: 1, opacity: 1, delay: 0, stagger: STAGGER, ease: "elastic", force3D: true }, "Start")
-      // Title2 - Hide
-      .to(titleElements2Current, { duration: DURATION, scale: 1, opacity: 0, delay: 0, stagger: STAGGER, ease: "elastic", force3D: true }, STAGGER + 0.1)
-      // Icon2 - Show
-      .from(iconElements2Current, { duration: DURATION, scale: 0.5, opacity: 0, delay: 0, stagger: STAGGER, ease: "elastic", force3D: true }, 2 * STAGGER)
-      .play();
+    this.doAnimation();
   }
 
   render() {
     return (
       <Fragment>
-        <div className="icon-container">
-          <div className="icon-wrapper">
-            <div className="icon-box">
-              {/* <div className="img-fluid" ref={(el) => (this.iconElements[0] = el)}> */}
-              <div className="img-fluid" ref={(el) => this.setIconRef(el, 0)}>
-                <Logo />
-              </div>
-              <div className="icon-box-caption" ref={(el) => (this.titleElements[0] = el)}>
-                <div className="icon-title">React</div>
-              </div>
-            </div>
-          </div>
-
-          <div className="icon-wrapper">
-            <div className="icon-box">
-              <div className="img-fluid" ref={(el) => (this.iconElements[1] = el)}>
-                <Logo />
-              </div>
-              <div className="icon-box-caption" ref={(el) => (this.titleElements[1] = el)}>
-                <div className="icon-title">Angular</div>
-              </div>
-            </div>
-          </div>
-
-          <div className="icon-wrapper">
-            <div className="icon-box">
-              <div className="img-fluid" ref={(el) => (this.iconElements[2] = el)}>
-                <Logo />
-              </div>
-              <div className="icon-box-caption" ref={(el) => (this.titleElements[2] = el)}>
-                <div className="icon-title">.NET</div>
-              </div>
-            </div>
-          </div>
-
-          <div className="icon-wrapper">
-            <div className="icon-box">
-              <div className="img-fluid" ref={(el) => (this.iconElements[3] = el)}>
-                <Logo />
-              </div>
-              <div className="icon-box-caption" ref={(el) => (this.titleElements[3] = el)}>
-                <div className="icon-title">Visual Studio</div>
-              </div>
-            </div>
-          </div>
-
-          <div className="icon-wrapper">
-            <div className="icon-box">
-              <div className="img-fluid" ref={(el) => (this.iconElements[4] = el)}>
-                <Logo />
-              </div>
-              <div className="icon-box-caption" ref={(el) => (this.titleElements[4] = el)}>
-                <div className="icon-title">National Instruments</div>
-              </div>
-            </div>
-          </div>
-
-          <div className="icon-wrapper">
-            <div className="icon-box">
-              <div className="img-fluid" ref={(el) => (this.iconElements[5] = el)}>
-                <Logo />
-              </div>
-              <div className="icon-box-caption" ref={(el) => (this.titleElements[5] = el)}>
-                <div className="icon-title">Java</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <TitleIconList icons={this.icons2} />
+        {this.icons2D.map((icons, index) => (
+          <TitleIconList key={index} icons={icons} />
+        ))}
       </Fragment>
     );
+  }
+
+  doAnimation() {
+    const STAGGER = 0.3;
+    this.icons2D.forEach((icons) => {
+      const iconElementsCurrent: TDiv[] = icons.map((item) => item.iconElementRef!.current); // ! - Non-null assertion operator
+      const titleElementsCurrent: TDiv[] = icons.map((item) => item.titleElementRef!.current);
+      const DURATION = icons.length * STAGGER;
+      this.myTween
+        // Title - Show
+        .to(titleElementsCurrent, { duration: DURATION, scale: 1, opacity: 1, delay: 0, stagger: STAGGER, ease: "elastic", force3D: true }, "Start")
+        // Title - Hide
+        .to(titleElementsCurrent, { duration: DURATION, scale: 1, opacity: 0, delay: 0, stagger: STAGGER, ease: "elastic", force3D: true }, STAGGER + 0.1)
+        // Icon - Show
+        .from(iconElementsCurrent, { duration: DURATION, scale: 0.5, opacity: 0, delay: 0, stagger: STAGGER, ease: "elastic", force3D: true }, 2 * STAGGER);
+    });
+    this.myTween.play();
   }
 }
