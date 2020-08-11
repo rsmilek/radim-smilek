@@ -94,10 +94,7 @@ export default class Skills extends Component {
             <IconXamarin />,
           ]}
         />
-        <Skill
-          header="Databases"
-          icons={[<IconInflux />, <IconMicrosoftsqlserver />, <IconMysql />, <IconSqlite />]}
-        />
+        <Skill header="Databases" icons={[<IconInflux />, <IconMicrosoftsqlserver />, <IconMysql />, <IconSqlite />]} />
         <Skill
           header="IDE's &amp; Tools"
           icons={[
@@ -113,13 +110,7 @@ export default class Skills extends Component {
         />
         <Skill
           header="Test/Measurement &amp; IoT"
-          icons={[
-            <IconNationalInstruments />,
-            <IconLabview />,
-            <IconArduino />,
-            <IconRaspberrypi />,
-            <IconZigbee />,
-          ]}
+          icons={[<IconNationalInstruments />, <IconLabview />, <IconArduino />, <IconRaspberrypi />, <IconZigbee />]}
         />
       </div>
     );

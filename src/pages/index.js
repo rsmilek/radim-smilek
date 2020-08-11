@@ -8,7 +8,7 @@ import MainNavbar from "../components/mainNavbar";
 import ContactMe from "../components/contactMe";
 import Skills from "../components/Skills";
 import Education from "../components/Education";
-import GsapTitleIcon, { GsapTitleIconAnim } from "../components/gsapTitleIcon";
+import { /*GsapTitleIcon,*/ GsapTitleIconAnim } from "../components/gsapTitleIcon";
 
 const IndexPage = ({
   data: {
@@ -27,7 +27,7 @@ const IndexPage = ({
         <meta name="description" content={site.siteMetadata.description} />
       </Helmet>
       <MainNavbar />
-      <GsapTitleIcon />
+      {/* <GsapTitleIcon /> */}
       <GsapTitleIconAnim />
       <Skills />
       <Education />
