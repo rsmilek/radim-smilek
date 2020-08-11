@@ -38,6 +38,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
+    "react-intersection-observer": "^8.26.2",
     "redux": "^2.0.0"
   },
   "devDependencies": {
