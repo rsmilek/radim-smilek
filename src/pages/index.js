@@ -8,7 +8,7 @@ import MainNavbar from "../components/mainNavbar";
 import ContactMe from "../components/contactMe";
 import Skills from "../components/Skills";
 import Education from "../components/Education";
-import GsapTitleIcon, { Pokus } from "../components/gsapTitleIcon";
+import GsapTitleIcon, { GsapTitleIconAnim } from "../components/gsapTitleIcon";
 
 const IndexPage = ({
   data: {
@@ -28,7 +28,7 @@ const IndexPage = ({
       </Helmet>
       <MainNavbar />
       <GsapTitleIcon />
-      <Pokus />
+      <GsapTitleIconAnim />
       <Skills />
       <Education />
       <ContactMe />

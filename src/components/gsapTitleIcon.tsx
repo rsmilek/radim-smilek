@@ -38,56 +38,12 @@ const TitleIconList: FunctionComponent<TTitleIconListProps> = ({ icons }) => {
   );
 };
 
-// const GsapTitleIcon: FunctionComponent<{}> = () => {
-//   const icons2D: TIcon[][] = [
-//     [
-//       { svg: <Logo />, title: "React", iconElementRef: createRef(), titleElementRef: createRef() },
-//       { svg: <Logo />, title: "Angular", iconElementRef: createRef(), titleElementRef: createRef() },
-//       { svg: <Logo />, title: ".NET", iconElementRef: createRef(), titleElementRef: createRef() },
-//       { svg: <Logo />, title: "Visual Studio", iconElementRef: createRef(), titleElementRef: createRef() },
-//       { svg: <Logo />, title: "National Instruments", iconElementRef: createRef(), titleElementRef: createRef() },
-//       { svg: <Logo />, title: "Java", iconElementRef: createRef(), titleElementRef: createRef() },
-//     ],
-//     [
-//       { svg: <Logo />, title: "C", iconElementRef: createRef(), titleElementRef: createRef() },
-//       { svg: <Logo />, title: "CSS5", iconElementRef: createRef(), titleElementRef: createRef() },
-//       { svg: <Logo />, title: "C#", iconElementRef: createRef(), titleElementRef: createRef() },
-//       { svg: <Logo />, title: "Delphi", iconElementRef: createRef(), titleElementRef: createRef() },
-//     ],
-//   ];
-//   const myTween = gsap.timeline({ paused: true });
+type GsapTitleIconProps = {
+  isInView: boolean;
+  autoStartAnimation: boolean;
+};
 
-//   const doAnimation = () => {
-//     const STAGGER = 0.3;
-//     icons2D.forEach((icons) => {
-//       const iconElementsCurrent: TDiv[] = icons.map((item) => item.iconElementRef!.current); // ! - Non-null assertion operator
-//       const titleElementsCurrent: TDiv[] = icons.map((item) => item.titleElementRef!.current);
-//       const DURATION = icons.length * STAGGER;
-//       myTween
-//         // Title - Show
-//         .to(titleElementsCurrent, { duration: DURATION, scale: 1, opacity: 1, delay: 0, stagger: STAGGER, ease: "elastic", force3D: true }, "Start")
-//         // Title - Hide
-//         .to(titleElementsCurrent, { duration: DURATION, scale: 1, opacity: 0, delay: 0, stagger: STAGGER, ease: "elastic", force3D: true }, STAGGER + 0.1)
-//         // Icon - Show
-//         .from(iconElementsCurrent, { duration: DURATION, scale: 0.5, opacity: 0, delay: 0, stagger: STAGGER, ease: "elastic", force3D: true }, 2 * STAGGER);
-//     });
-//     myTween.play();
-//   };
-
-//   // doAnimation();
-
-//   return (
-//     <Fragment>
-//       {icons2D.map((icons, index) => (
-//         <TitleIconList key={index} icons={icons} />
-//       ))}
-//     </Fragment>
-//   );
-// };
-
-// export default GsapTitleIcon;
-
-export default class GsapTitleIcon extends Component<{ isInView: boolean }> {
+export default class GsapTitleIcon extends Component<GsapTitleIconProps> {
   icons2D: TIcon[][] = [
     [
       { svg: <Logo />, title: "React", iconElementRef: createRef(), titleElementRef: createRef() },
@@ -106,31 +62,18 @@ export default class GsapTitleIcon extends Component<{ isInView: boolean }> {
   ];
   myTween = gsap.timeline({ paused: true });
 
+  static defaultProps = {
+    autoStartAnimation: true,
+    isInView: false,
+  };
+
   componentDidMount() {
-    const STAGGER = 0.3;
-    this.icons2D.forEach((icons) => {
-      const iconElementsCurrent: TDiv[] = icons.map((item) => item.iconElementRef!.current); // ! - Non-null assertion operator
-      const titleElementsCurrent: TDiv[] = icons.map((item) => item.titleElementRef!.current);
-      const DURATION = icons.length * STAGGER;
-      this.myTween
-        // Title - Show
-        .to(titleElementsCurrent, { duration: DURATION, scale: 1, opacity: 1, delay: 0, stagger: STAGGER, ease: "elastic", force3D: true }, "Start")
-        // Title - Hide
-        .to(titleElementsCurrent, { duration: DURATION, scale: 1, opacity: 0, delay: 0, stagger: STAGGER, ease: "elastic", force3D: true }, STAGGER + 0.1)
-        // Icon - Show
-        .from(iconElementsCurrent, { duration: DURATION, scale: 0.5, opacity: 0, delay: 0, stagger: STAGGER, ease: "elastic", force3D: true }, 2 * STAGGER);
-    });
-    this.myTween.play(); // ???
+    this.bindAnimation();
+    if (this.props.autoStartAnimation) this.myTween.play();
   }
 
   componentDidUpdate() {
-    console.log(this.props.isInView);
-    // if (this.props.isInView) {
-    //   this.myTween.play();
-    // } else {
-    //   this.myTween.restart();
-    // }
-    this.myTween.restart();
+    if (this.props.isInView) this.myTween.restart();
   }
 
   render() {
@@ -143,7 +86,7 @@ export default class GsapTitleIcon extends Component<{ isInView: boolean }> {
     );
   }
 
-  doAnimation() {
+  bindAnimation() {
     const STAGGER = 0.3;
     this.icons2D.forEach((icons) => {
       const iconElementsCurrent: TDiv[] = icons.map((item) => item.iconElementRef!.current); // ! - Non-null assertion operator
@@ -157,11 +100,10 @@ export default class GsapTitleIcon extends Component<{ isInView: boolean }> {
         // Icon - Show
         .from(iconElementsCurrent, { duration: DURATION, scale: 0.5, opacity: 0, delay: 0, stagger: STAGGER, ease: "elastic", force3D: true }, 2 * STAGGER);
     });
-    this.myTween.play();
   }
 }
 
-export const Pokus = () => (
+export const GsapTitleIconAnim = () => (
   <InView threshold={0.5}>
     {({ inView, ref, entry }) => (
       <div ref={ref}>

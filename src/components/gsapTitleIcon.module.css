@@ -50,10 +50,12 @@
     font-size: 1rem;
 }
 
-.iconBox:hover .iconBoxCaption {
+/* Just for debugging */
+/* .iconBox:hover .iconBoxCaption {
     opacity: 1;
-}
+} */
 
-.iconBox:hover .imgFluid {
+/* Just for debugging */
+/* .iconBox:hover .imgFluid {
     opacity: 0;
-}
+} */
