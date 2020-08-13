@@ -40,9 +40,7 @@ import IconArduino from "../../static/assets/skills/arduino.svg";
 import IconRaspberrypi from "../../static/assets/skills/raspberrypi.svg";
 import IconZigbee from "../../static/assets/skills/zigbee.svg";
 
-type TIcon = {
-  svg: JSX.Element /*; title: string; iconElementRef: TDivRef; titleElementRef: TDivRef */;
-};
+type TIcon = { svg: JSX.Element; title: string /*iconElementRef: TDivRef; titleElementRef: TDivRef */ };
 
 type SkillIconProps = {
   icon: TIcon;
@@ -54,14 +52,23 @@ type SkillProps = {
 };
 
 const SkillIcon: FunctionComponent<SkillIconProps> = ({ icon }) => {
-  return <div className="skill-icon">{icon.svg}</div>;
+  return (
+    <div className="iconWrapper">
+      <div className="iconBox">
+        <div className="imgFluid" /*ref={icon.iconElementRef}*/>{icon.svg}</div>
+        <div className="iconBoxCaption" /*ref={icon.titleElementRef}*/>
+          <div className="iconTitle">{icon.title}</div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 const Skill: FunctionComponent<SkillProps> = ({ header, icons }) => {
   return (
     <React.Fragment>
       <div className="article-subtitle skill-header">{header}</div>
-      <div className="row skill-icons">
+      <div className="skill-container">
         {icons.map((item, index) => (
           <React.Fragment key={index}>
             <SkillIcon icon={item} />
@@ -74,48 +81,48 @@ const Skill: FunctionComponent<SkillProps> = ({ header, icons }) => {
 
 export default class Skills extends Component<{}> {
   iconsProgLanguages: TIcon[] = [
-    { svg: <IconC /> },
-    { svg: <IconCss3 /> },
-    { svg: <IconCsharp /> },
-    { svg: <IconDelphi /> },
-    { svg: <IconGraphql /> },
-    { svg: <IconHtml5 /> },
-    { svg: <IconJavascript /> },
-    { svg: <IconPython /> },
-    { svg: <IconSass /> },
+    { svg: <IconC />, title: "C" },
+    { svg: <IconCss3 />, title: "CSS3" },
+    { svg: <IconCsharp />, title: "C#" },
+    { svg: <IconDelphi />, title: "Delphi" },
+    { svg: <IconGraphql />, title: "GraphQL" },
+    { svg: <IconHtml5 />, title: "HTML5" },
+    { svg: <IconJavascript />, title: "Javascript" },
+    { svg: <IconPython />, title: "Python" },
+    { svg: <IconSass />, title: "Sass" },
   ];
   iconsFwsLibs: TIcon[] = [
-    { svg: <IconBootstrap /> },
-    { svg: <IconDotnet /> },
-    { svg: <IconGatsby /> },
-    { svg: <IconJquery /> },
-    { svg: <IconNextjs /> },
-    { svg: <IconNodejs /> },
-    { svg: <IconReact /> },
-    { svg: <IconXamarin /> },
+    { svg: <IconBootstrap />, title: "Bootstrap" },
+    { svg: <IconDotnet />, title: ".NET" },
+    { svg: <IconGatsby />, title: "Gatsby" },
+    { svg: <IconJquery />, title: "JQuery" },
+    { svg: <IconNextjs />, title: "NextJS" },
+    { svg: <IconNodejs />, title: "NodeJS" },
+    { svg: <IconReact />, title: "React" },
+    { svg: <IconXamarin />, title: "Xamarin" },
   ];
   iconsDatabases: TIcon[] = [
-    { svg: <IconInflux /> },
-    { svg: <IconMicrosoftsqlserver /> },
-    { svg: <IconMysql /> },
-    { svg: <IconSqlite /> },
+    { svg: <IconInflux />, title: "Influx" },
+    { svg: <IconMicrosoftsqlserver />, title: "MS SQL" },
+    { svg: <IconMysql />, title: "MySQL" },
+    { svg: <IconSqlite />, title: "SQLite" },
   ];
   iconsIdeTools: TIcon[] = [
-    { svg: <IconDocker /> },
-    { svg: <IconGithub /> },
-    { svg: <IconNpm /> },
-    { svg: <IconNuget /> },
-    { svg: <IconSubversion /> },
-    { svg: <IconVisualStudio /> },
-    { svg: <IconVisualStudioCode /> },
-    { svg: <IconYarn /> },
+    { svg: <IconDocker />, title: "Docker" },
+    { svg: <IconGithub />, title: "Github" },
+    { svg: <IconNpm />, title: "NPM" },
+    { svg: <IconNuget />, title: "Nuget" },
+    { svg: <IconSubversion />, title: "SVN" },
+    { svg: <IconVisualStudio />, title: "VS" },
+    { svg: <IconVisualStudioCode />, title: "VS Code" },
+    { svg: <IconYarn />, title: "Yarn" },
   ];
   iconsTMIot: TIcon[] = [
-    { svg: <IconNationalInstruments /> },
-    { svg: <IconLabview /> },
-    { svg: <IconArduino /> },
-    { svg: <IconRaspberrypi /> },
-    { svg: <IconZigbee /> },
+    { svg: <IconNationalInstruments />, title: "National Instruments" },
+    { svg: <IconLabview />, title: "Labview" },
+    { svg: <IconArduino />, title: "Arduino" },
+    { svg: <IconRaspberrypi />, title: "Raspberry PI" },
+    { svg: <IconZigbee />, title: "Zigbee" },
   ];
 
   render() {
@@ -129,7 +136,6 @@ export default class Skills extends Component<{}> {
              SQLite, with personal further projects utilizing Influxdb.`,
           ]}
         />
-        {/* prettier-ignore */}
         <Skill header="Programming languages &amp; IDE's" icons={this.iconsProgLanguages} />
         <Skill header="Frameworks &amp; Libraries" icons={this.iconsFwsLibs} />
         <Skill header="Databases" icons={this.iconsDatabases} />
