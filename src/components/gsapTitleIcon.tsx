@@ -1,10 +1,4 @@
-import React, {
-  Component,
-  FunctionComponent,
-  Fragment,
-  RefObject,
-  createRef,
-} from "react";
+import React, { Component, FunctionComponent, Fragment, RefObject, createRef } from "react";
 import gsap from "gsap";
 import { InView } from "react-intersection-observer";
 import styles from "./gsapTitleIcon.module.css";
@@ -110,55 +104,27 @@ export default class GsapTitleIcon extends Component<GsapTitleIconProps> {
   bindAnimation() {
     const STAGGER = 0.3;
     this.icons2D.forEach((icons, index) => {
-      const iconElementsCurrent: TDiv[] = icons.map(
-        (item) => item.iconElementRef!.current
-      ); // ! - Non-null assertion operator
-      const titleElementsCurrent: TDiv[] = icons.map(
-        (item) => item.titleElementRef!.current
-      );
+      const iconElementsCurrent: TDiv[] = icons.map((item) => item.iconElementRef!.current); // ! - Non-null assertion operator
+      const titleElementsCurrent: TDiv[] = icons.map((item) => item.titleElementRef!.current);
       const DURATION = icons.length * STAGGER;
       const OFFSET = 0.5 * index;
       this.myTween
         // Title - Show
         .to(
           titleElementsCurrent,
-          {
-            duration: DURATION,
-            scale: 1,
-            opacity: 1,
-            delay: 0,
-            stagger: STAGGER,
-            ease: "elastic",
-            force3D: true,
-          },
+          { duration: DURATION, scale: 1, opacity: 1, delay: 0, stagger: STAGGER, ease: "elastic", force3D: true },
           0 + OFFSET
         )
         // Title - Hide
         .to(
           titleElementsCurrent,
-          {
-            duration: DURATION,
-            scale: 1,
-            opacity: 0,
-            delay: 0,
-            stagger: STAGGER,
-            ease: "elastic",
-            force3D: true,
-          },
+          { duration: DURATION, scale: 1, opacity: 0, delay: 0, stagger: STAGGER, ease: "elastic", force3D: true },
           OFFSET + STAGGER + 0.1
         )
         // Icon - Show
         .from(
           iconElementsCurrent,
-          {
-            duration: DURATION,
-            scale: 0.5,
-            opacity: 0,
-            delay: 0,
-            stagger: STAGGER,
-            ease: "elastic",
-            force3D: true,
-          },
+          { duration: DURATION, scale: 0.5, opacity: 0, delay: 0, stagger: STAGGER, ease: "elastic", force3D: true },
           OFFSET + 2 * STAGGER
         );
     });
