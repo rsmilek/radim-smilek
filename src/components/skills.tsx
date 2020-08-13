@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, FunctionComponent } from "react";
 import Article from "./Article";
 // Icons - Programming languages
 import IconC from "../../static/assets/skills/c.svg";
@@ -40,14 +40,20 @@ import IconArduino from "../../static/assets/skills/arduino.svg";
 import IconRaspberrypi from "../../static/assets/skills/raspberrypi.svg";
 import IconZigbee from "../../static/assets/skills/zigbee.svg";
 
-const Skill = ({ header, icons }) => {
+type TIcon = { svg: JSX.Element /*; title: string; iconElementRef: TDivRef; titleElementRef: TDivRef */ };
+type SkillProps = {
+  header: string;
+  icons: TIcon[];
+};
+
+const Skill: FunctionComponent<SkillProps> = ({ header, icons }) => {
   return (
     <React.Fragment>
       <div className="article-subtitle skill-header">{header}</div>
       <div className="row skill-icons">
         {icons.map((icon, index) => (
           <div key={index} className="skill-icon">
-            {icon}
+            {icon.svg}
           </div>
         ))}
       </div>
@@ -55,7 +61,47 @@ const Skill = ({ header, icons }) => {
   );
 };
 
-export default class Skills extends Component {
+export default class Skills extends Component<{}> {
+  iconsProgLanguages: TIcon[] = [
+    { svg: <IconC /> },
+    { svg: <IconCss3 /> },
+    { svg: <IconCsharp /> },
+    { svg: <IconDelphi /> },
+    { svg: <IconGraphql /> },
+    { svg: <IconHtml5 /> },
+    { svg: <IconJavascript /> },
+    { svg: <IconPython /> },
+    { svg: <IconSass /> },
+  ];
+  iconsFwsLibs: TIcon[] = [
+    { svg: <IconBootstrap /> },
+    { svg: <IconDotnet /> },
+    { svg: <IconGatsby /> },
+    { svg: <IconJquery /> },
+    { svg: <IconNextjs /> },
+    { svg: <IconNodejs /> },
+    { svg: <IconReact /> },
+    { svg: <IconXamarin /> },
+  ];
+  iconsDatabases: TIcon[] = [{ svg: <IconInflux /> }, { svg: <IconMicrosoftsqlserver /> }, { svg: <IconMysql /> }, { svg: <IconSqlite /> }];
+  iconsIdeTools: TIcon[] = [
+    { svg: <IconDocker /> },
+    { svg: <IconGithub /> },
+    { svg: <IconNpm /> },
+    { svg: <IconNuget /> },
+    { svg: <IconSubversion /> },
+    { svg: <IconVisualStudio /> },
+    { svg: <IconVisualStudioCode /> },
+    { svg: <IconYarn /> },
+  ];
+  iconsTMIot: TIcon[] = [
+    { svg: <IconNationalInstruments /> },
+    { svg: <IconLabview /> },
+    { svg: <IconArduino /> },
+    { svg: <IconRaspberrypi /> },
+    { svg: <IconZigbee /> },
+  ];
+
   render() {
     return (
       <div className="container skills" id="skills">
@@ -67,51 +113,11 @@ export default class Skills extends Component {
              SQLite, with personal further projects utilizing Influxdb.`,
           ]}
         />
-        <Skill
-          header="Programming languages &amp; IDE's"
-          icons={[
-            <IconC />,
-            <IconCss3 />,
-            <IconCsharp />,
-            <IconDelphi />,
-            <IconGraphql />,
-            <IconHtml5 />,
-            <IconJavascript />,
-            <IconPython />,
-            <IconSass />,
-          ]}
-        />
-        <Skill
-          header="Frameworks &amp; Libraries"
-          icons={[
-            <IconBootstrap />,
-            <IconDotnet />,
-            <IconGatsby />,
-            <IconJquery />,
-            <IconNextjs />,
-            <IconNodejs />,
-            <IconReact />,
-            <IconXamarin />,
-          ]}
-        />
-        <Skill header="Databases" icons={[<IconInflux />, <IconMicrosoftsqlserver />, <IconMysql />, <IconSqlite />]} />
-        <Skill
-          header="IDE's &amp; Tools"
-          icons={[
-            <IconDocker />,
-            <IconGithub />,
-            <IconNpm />,
-            <IconNuget />,
-            <IconSubversion />,
-            <IconVisualStudio />,
-            <IconVisualStudioCode />,
-            <IconYarn />,
-          ]}
-        />
-        <Skill
-          header="Test/Measurement &amp; IoT"
-          icons={[<IconNationalInstruments />, <IconLabview />, <IconArduino />, <IconRaspberrypi />, <IconZigbee />]}
-        />
+        <Skill header="Programming languages &amp; IDE's" icons={this.iconsProgLanguages} />
+        <Skill header="Frameworks &amp; Libraries" icons={this.iconsFwsLibs} />
+        <Skill header="Databases" icons={this.iconsDatabases} />
+        <Skill header="IDE's &amp; Tools" icons={this.iconsIdeTools} />
+        <Skill header="Test/Measurement &amp; IoT" icons={this.iconsTMIot} />
       </div>
     );
   }
