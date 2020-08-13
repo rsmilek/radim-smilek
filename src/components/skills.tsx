@@ -1,4 +1,4 @@
-import React, { Component, FunctionComponent } from "react";
+import React, { Component, FunctionComponent, RefObject, createRef } from "react";
 import Article from "./Article";
 // Icons - Programming languages
 import IconC from "../../static/assets/skills/c.svg";
@@ -40,8 +40,13 @@ import IconArduino from "../../static/assets/skills/arduino.svg";
 import IconRaspberrypi from "../../static/assets/skills/raspberrypi.svg";
 import IconZigbee from "../../static/assets/skills/zigbee.svg";
 
-type TIcon = { svg: JSX.Element; title: string /*iconElementRef: TDivRef; titleElementRef: TDivRef */ };
-type TSkill = { header: string; icons: TIcon[] };
+type TDivRef = RefObject<HTMLDivElement> | null;
+
+type TIcon = {
+  svg: JSX.Element;
+  title: string;
+  /*iconElementRef: TDivRef; titleElementRef: TDivRef */
+};
 
 type SkillIconProps = {
   icon: TIcon;
@@ -49,6 +54,7 @@ type SkillIconProps = {
 
 type SkillProps = {
   header: string;
+  headerElementRef: TDivRef;
   icons: TIcon[];
 };
 
@@ -65,11 +71,11 @@ const SkillIcon: FunctionComponent<SkillIconProps> = ({ icon }) => {
   );
 };
 
-const Skill: FunctionComponent<SkillProps> = ({ header, icons }) => {
+const Skill: FunctionComponent<SkillProps> = ({ header, headerElementRef, icons }) => {
   return (
     <React.Fragment>
       <div className="article-subtitle skill-header">{header}</div>
-      <div className="skill-container">
+      <div className="skill-container" ref={headerElementRef}>
         {icons.map((item, index) => (
           <React.Fragment key={index}>
             <SkillIcon icon={item} />
@@ -81,9 +87,10 @@ const Skill: FunctionComponent<SkillProps> = ({ header, icons }) => {
 };
 
 export default class Skills extends Component<{}> {
-  skillList: TSkill[] = [
+  skills: SkillProps[] = [
     {
       header: "Programming languages &amp; IDE's",
+      headerElementRef: createRef(),
       icons: [
         { svg: <IconC />, title: "C" },
         { svg: <IconCss3 />, title: "CSS3" },
@@ -98,6 +105,7 @@ export default class Skills extends Component<{}> {
     },
     {
       header: "Frameworks &amp; Libraries",
+      headerElementRef: createRef(),
       icons: [
         { svg: <IconBootstrap />, title: "Bootstrap" },
         { svg: <IconDotnet />, title: ".NET" },
@@ -111,6 +119,7 @@ export default class Skills extends Component<{}> {
     },
     {
       header: "Databases",
+      headerElementRef: createRef(),
       icons: [
         { svg: <IconInflux />, title: "Influx" },
         { svg: <IconMssqlserver />, title: "MS SQL" },
@@ -120,6 +129,7 @@ export default class Skills extends Component<{}> {
     },
     {
       header: "IDE's &amp; Tools",
+      headerElementRef: createRef(),
       icons: [
         { svg: <IconDocker />, title: "Docker" },
         { svg: <IconGithub />, title: "Github" },
@@ -133,6 +143,7 @@ export default class Skills extends Component<{}> {
     },
     {
       header: "Test/Measurement &amp; IoT",
+      headerElementRef: createRef(),
       icons: [
         { svg: <IconNationalInstruments />, title: "National Instruments" },
         { svg: <IconLabview />, title: "Labview" },
@@ -142,6 +153,10 @@ export default class Skills extends Component<{}> {
       ],
     },
   ];
+
+  componentDidMount() {
+    console.log(this.skills[0].headerElementRef?.current);
+  }
 
   render() {
     return (
@@ -154,8 +169,8 @@ export default class Skills extends Component<{}> {
              SQLite, with personal further projects utilizing Influxdb.`,
           ]}
         />
-        {this.skillList.map((item, index) => (
-          <Skill key={index} header={item.header} icons={item.icons} />
+        {this.skills.map((item, index) => (
+          <Skill key={index} header={item.header} headerElementRef={item.headerElementRef} icons={item.icons} />
         ))}
       </div>
     );
