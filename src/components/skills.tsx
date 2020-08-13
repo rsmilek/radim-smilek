@@ -81,62 +81,66 @@ const Skill: FunctionComponent<SkillProps> = ({ header, icons }) => {
 };
 
 export default class Skills extends Component<{}> {
-  // prettier-ignore
-  iconsProgLanguages: TIcon[] = [
-    { svg: <IconC />,                   title: "C" },
-    { svg: <IconCss3 />,                title: "CSS3" },
-    { svg: <IconCsharp />,              title: "C#" },
-    { svg: <IconDelphi />,              title: "Delphi" },
-    { svg: <IconGraphql />,             title: "GraphQL" },
-    { svg: <IconHtml5 />,               title: "HTML5" },
-    { svg: <IconJavascript />,          title: "Javascript" },
-    { svg: <IconPython />,              title: "Python" },
-    { svg: <IconSass />,                title: "Sass" },
-  ];
-  // prettier-ignore
-  iconsFwsLibs: TIcon[] = [
-    { svg: <IconBootstrap />,           title: "Bootstrap" },
-    { svg: <IconDotnet />,              title: ".NET" },
-    { svg: <IconGatsby />,              title: "Gatsby" },
-    { svg: <IconJquery />,              title: "JQuery" },
-    { svg: <IconNextjs />,              title: "NextJS" },
-    { svg: <IconNodejs />,              title: "NodeJS" },
-    { svg: <IconReact />,               title: "React" },
-    { svg: <IconXamarin />,             title: "Xamarin" },
-  ];
-  // prettier-ignore
-  iconsDatabases: TIcon[] = [
-    { svg: <IconInflux />,              title: "Influx" },
-    { svg: <IconMssqlserver />,         title: "MS SQL" },
-    { svg: <IconMysql />,               title: "MySQL" },
-    { svg: <IconSqlite />,              title: "SQLite" },
-  ];
-  // prettier-ignore
-  iconsIdeTools: TIcon[] = [
-    { svg: <IconDocker />,              title: "Docker" },
-    { svg: <IconGithub />,              title: "Github" },
-    { svg: <IconNpm />,                 title: "NPM" },
-    { svg: <IconNuget />,               title: "Nuget" },
-    { svg: <IconSubversion />,          title: "SVN" },
-    { svg: <IconVisualStudio />,        title: "VS" },
-    { svg: <IconVisualStudioCode />,    title: "VS Code" },
-    { svg: <IconYarn />,                title: "Yarn" },
-  ];
-  // prettier-ignore
-  iconsTMIot: TIcon[] = [
-    { svg: <IconNationalInstruments />, title: "National Instruments" },
-    { svg: <IconLabview />,             title: "Labview" },
-    { svg: <IconArduino />,             title: "Arduino" },
-    { svg: <IconRaspberrypi />,         title: "Raspberry PI" },
-    { svg: <IconZigbee />,              title: "Zigbee" },
-  ];
-  // prettier-ignore
   skillList: TSkill[] = [
-    { header: "Programming languages &amp; IDE's",  icons: this.iconsProgLanguages },
-    { header: "Frameworks &amp; Libraries",         icons: this.iconsFwsLibs },
-    { header: "Databases",                          icons: this.iconsDatabases },
-    { header: "IDE's &amp; Tools",                  icons: this.iconsIdeTools },
-    { header: "Test/Measurement &amp; IoT",         icons: this.iconsTMIot },
+    {
+      header: "Programming languages &amp; IDE's",
+      icons: [
+        { svg: <IconC />, title: "C" },
+        { svg: <IconCss3 />, title: "CSS3" },
+        { svg: <IconCsharp />, title: "C#" },
+        { svg: <IconDelphi />, title: "Delphi" },
+        { svg: <IconGraphql />, title: "GraphQL" },
+        { svg: <IconHtml5 />, title: "HTML5" },
+        { svg: <IconJavascript />, title: "Javascript" },
+        { svg: <IconPython />, title: "Python" },
+        { svg: <IconSass />, title: "Sass" },
+      ],
+    },
+    {
+      header: "Frameworks &amp; Libraries",
+      icons: [
+        { svg: <IconBootstrap />, title: "Bootstrap" },
+        { svg: <IconDotnet />, title: ".NET" },
+        { svg: <IconGatsby />, title: "Gatsby" },
+        { svg: <IconJquery />, title: "JQuery" },
+        { svg: <IconNextjs />, title: "NextJS" },
+        { svg: <IconNodejs />, title: "NodeJS" },
+        { svg: <IconReact />, title: "React" },
+        { svg: <IconXamarin />, title: "Xamarin" },
+      ],
+    },
+    {
+      header: "Databases",
+      icons: [
+        { svg: <IconInflux />, title: "Influx" },
+        { svg: <IconMssqlserver />, title: "MS SQL" },
+        { svg: <IconMysql />, title: "MySQL" },
+        { svg: <IconSqlite />, title: "SQLite" },
+      ],
+    },
+    {
+      header: "IDE's &amp; Tools",
+      icons: [
+        { svg: <IconDocker />, title: "Docker" },
+        { svg: <IconGithub />, title: "Github" },
+        { svg: <IconNpm />, title: "NPM" },
+        { svg: <IconNuget />, title: "Nuget" },
+        { svg: <IconSubversion />, title: "SVN" },
+        { svg: <IconVisualStudio />, title: "VS" },
+        { svg: <IconVisualStudioCode />, title: "VS Code" },
+        { svg: <IconYarn />, title: "Yarn" },
+      ],
+    },
+    {
+      header: "Test/Measurement &amp; IoT",
+      icons: [
+        { svg: <IconNationalInstruments />, title: "National Instruments" },
+        { svg: <IconLabview />, title: "Labview" },
+        { svg: <IconArduino />, title: "Arduino" },
+        { svg: <IconRaspberrypi />, title: "Raspberry PI" },
+        { svg: <IconZigbee />, title: "Zigbee" },
+      ],
+    },
   ];
 
   render() {
