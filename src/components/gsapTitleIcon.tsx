@@ -64,70 +64,21 @@ type GsapTitleIconProps = {
 };
 
 export default class GsapTitleIcon extends Component<GsapTitleIconProps> {
+  // prettier-ignore
   icons2D: TIcon[][] = [
     [
-      {
-        svg: <IconReact />,
-        title: "React",
-        iconElementRef: createRef(),
-        titleElementRef: createRef(),
-      },
-      {
-        svg: <IconXamarin />,
-        title: "Xamarin",
-        iconElementRef: createRef(),
-        titleElementRef: createRef(),
-      },
-      {
-        svg: <IconDotnet />,
-        title: ".NET",
-        iconElementRef: createRef(),
-        titleElementRef: createRef(),
-      },
-      {
-        svg: <IconNodejs />,
-        title: "Node JS",
-        iconElementRef: createRef(),
-        titleElementRef: createRef(),
-      },
-      {
-        svg: <IconNationalInstruments />,
-        title: "National Instruments",
-        iconElementRef: createRef(),
-        titleElementRef: createRef(),
-      },
-      {
-        svg: <IconJquery />,
-        title: "JQuery",
-        iconElementRef: createRef(),
-        titleElementRef: createRef(),
-      },
+      { svg: <IconReact />,               title: "React",                 iconElementRef: createRef(), titleElementRef: createRef(), },
+      { svg: <IconXamarin />,             title: "Xamarin",               iconElementRef: createRef(), titleElementRef: createRef(), },
+      { svg: <IconDotnet />,              title: ".NET",                  iconElementRef: createRef(), titleElementRef: createRef(), },
+      { svg: <IconNodejs />,              title: "Node JS",               iconElementRef: createRef(), titleElementRef: createRef(), },
+      { svg: <IconNationalInstruments />, title: "National Instruments",  iconElementRef: createRef(), titleElementRef: createRef(), },
+      { svg: <IconJquery />,              title: "JQuery",                iconElementRef: createRef(), titleElementRef: createRef(), },
     ],
     [
-      {
-        svg: <IconC />,
-        title: "C",
-        iconElementRef: createRef(),
-        titleElementRef: createRef(),
-      },
-      {
-        svg: <IconCss3 />,
-        title: "CSS5",
-        iconElementRef: createRef(),
-        titleElementRef: createRef(),
-      },
-      {
-        svg: <IconCsharp />,
-        title: "C#",
-        iconElementRef: createRef(),
-        titleElementRef: createRef(),
-      },
-      {
-        svg: <IconDelphi />,
-        title: "Delphi",
-        iconElementRef: createRef(),
-        titleElementRef: createRef(),
-      },
+      { svg: <IconC />,                   title: "C",                     iconElementRef: createRef(), titleElementRef: createRef(), },
+      { svg: <IconCss3 />,                title: "CSS5",                  iconElementRef: createRef(), titleElementRef: createRef(), },
+      { svg: <IconCsharp />,              title: "C#",                    iconElementRef: createRef(), titleElementRef: createRef(), },
+      { svg: <IconDelphi />,              title: "Delphi",                iconElementRef: createRef(), titleElementRef: createRef(), },
     ],
   ];
   myTween = gsap.timeline({ paused: true });
