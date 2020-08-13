@@ -1,4 +1,10 @@
-import React, { Component, FunctionComponent, Fragment, RefObject, createRef } from "react";
+import React, {
+  Component,
+  FunctionComponent,
+  Fragment,
+  RefObject,
+  createRef,
+} from "react";
 import gsap from "gsap";
 import { InView } from "react-intersection-observer";
 import styles from "./gsapTitleIcon.module.css";
@@ -15,7 +21,12 @@ import IconNationalInstruments from "../../static/assets/skills/national-instrum
 
 type TDivRef = RefObject<HTMLDivElement> | null;
 type TDiv = HTMLDivElement | null;
-type TIcon = { svg: JSX.Element; title: string; iconElementRef: TDivRef; titleElementRef: TDivRef };
+type TIcon = {
+  svg: JSX.Element;
+  title: string;
+  iconElementRef: TDivRef;
+  titleElementRef: TDivRef;
+};
 type TTitleIconProps = { icon: TIcon };
 type TTitleIconListProps = { icons: TIcon[] };
 
@@ -55,18 +66,68 @@ type GsapTitleIconProps = {
 export default class GsapTitleIcon extends Component<GsapTitleIconProps> {
   icons2D: TIcon[][] = [
     [
-      { svg: <IconReact />, title: "React", iconElementRef: createRef(), titleElementRef: createRef() },
-      { svg: <IconXamarin />, title: "Xamarin", iconElementRef: createRef(), titleElementRef: createRef() },
-      { svg: <IconDotnet />, title: ".NET", iconElementRef: createRef(), titleElementRef: createRef() },
-      { svg: <IconNodejs />, title: "Node JS", iconElementRef: createRef(), titleElementRef: createRef() },
-      { svg: <IconNationalInstruments />, title: "National Instruments", iconElementRef: createRef(), titleElementRef: createRef() },
-      { svg: <IconJquery />, title: "JQuery", iconElementRef: createRef(), titleElementRef: createRef() },
+      {
+        svg: <IconReact />,
+        title: "React",
+        iconElementRef: createRef(),
+        titleElementRef: createRef(),
+      },
+      {
+        svg: <IconXamarin />,
+        title: "Xamarin",
+        iconElementRef: createRef(),
+        titleElementRef: createRef(),
+      },
+      {
+        svg: <IconDotnet />,
+        title: ".NET",
+        iconElementRef: createRef(),
+        titleElementRef: createRef(),
+      },
+      {
+        svg: <IconNodejs />,
+        title: "Node JS",
+        iconElementRef: createRef(),
+        titleElementRef: createRef(),
+      },
+      {
+        svg: <IconNationalInstruments />,
+        title: "National Instruments",
+        iconElementRef: createRef(),
+        titleElementRef: createRef(),
+      },
+      {
+        svg: <IconJquery />,
+        title: "JQuery",
+        iconElementRef: createRef(),
+        titleElementRef: createRef(),
+      },
     ],
     [
-      { svg: <IconC />, title: "C", iconElementRef: createRef(), titleElementRef: createRef() },
-      { svg: <IconCss3 />, title: "CSS5", iconElementRef: createRef(), titleElementRef: createRef() },
-      { svg: <IconCsharp />, title: "C#", iconElementRef: createRef(), titleElementRef: createRef() },
-      { svg: <IconDelphi />, title: "Delphi", iconElementRef: createRef(), titleElementRef: createRef() },
+      {
+        svg: <IconC />,
+        title: "C",
+        iconElementRef: createRef(),
+        titleElementRef: createRef(),
+      },
+      {
+        svg: <IconCss3 />,
+        title: "CSS5",
+        iconElementRef: createRef(),
+        titleElementRef: createRef(),
+      },
+      {
+        svg: <IconCsharp />,
+        title: "C#",
+        iconElementRef: createRef(),
+        titleElementRef: createRef(),
+      },
+      {
+        svg: <IconDelphi />,
+        title: "Delphi",
+        iconElementRef: createRef(),
+        titleElementRef: createRef(),
+      },
     ],
   ];
   myTween = gsap.timeline({ paused: true });
@@ -98,27 +159,55 @@ export default class GsapTitleIcon extends Component<GsapTitleIconProps> {
   bindAnimation() {
     const STAGGER = 0.3;
     this.icons2D.forEach((icons, index) => {
-      const iconElementsCurrent: TDiv[] = icons.map((item) => item.iconElementRef!.current); // ! - Non-null assertion operator
-      const titleElementsCurrent: TDiv[] = icons.map((item) => item.titleElementRef!.current);
+      const iconElementsCurrent: TDiv[] = icons.map(
+        (item) => item.iconElementRef!.current
+      ); // ! - Non-null assertion operator
+      const titleElementsCurrent: TDiv[] = icons.map(
+        (item) => item.titleElementRef!.current
+      );
       const DURATION = icons.length * STAGGER;
       const OFFSET = 0.5 * index;
       this.myTween
         // Title - Show
         .to(
           titleElementsCurrent,
-          { duration: DURATION, scale: 1, opacity: 1, delay: 0, stagger: STAGGER, ease: "elastic", force3D: true },
+          {
+            duration: DURATION,
+            scale: 1,
+            opacity: 1,
+            delay: 0,
+            stagger: STAGGER,
+            ease: "elastic",
+            force3D: true,
+          },
           0 + OFFSET
         )
         // Title - Hide
         .to(
           titleElementsCurrent,
-          { duration: DURATION, scale: 1, opacity: 0, delay: 0, stagger: STAGGER, ease: "elastic", force3D: true },
+          {
+            duration: DURATION,
+            scale: 1,
+            opacity: 0,
+            delay: 0,
+            stagger: STAGGER,
+            ease: "elastic",
+            force3D: true,
+          },
           OFFSET + STAGGER + 0.1
         )
         // Icon - Show
         .from(
           iconElementsCurrent,
-          { duration: DURATION, scale: 0.5, opacity: 0, delay: 0, stagger: STAGGER, ease: "elastic", force3D: true },
+          {
+            duration: DURATION,
+            scale: 0.5,
+            opacity: 0,
+            delay: 0,
+            stagger: STAGGER,
+            ease: "elastic",
+            force3D: true,
+          },
           OFFSET + 2 * STAGGER
         );
     });

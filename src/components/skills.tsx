@@ -40,10 +40,21 @@ import IconArduino from "../../static/assets/skills/arduino.svg";
 import IconRaspberrypi from "../../static/assets/skills/raspberrypi.svg";
 import IconZigbee from "../../static/assets/skills/zigbee.svg";
 
-type TIcon = { svg: JSX.Element /*; title: string; iconElementRef: TDivRef; titleElementRef: TDivRef */ };
+type TIcon = {
+  svg: JSX.Element /*; title: string; iconElementRef: TDivRef; titleElementRef: TDivRef */;
+};
+
+type SkillIconProps = {
+  icon: TIcon;
+};
+
 type SkillProps = {
   header: string;
   icons: TIcon[];
+};
+
+const SkillIcon: FunctionComponent<SkillIconProps> = ({ icon }) => {
+  return <div className="skill-icon">{icon.svg}</div>;
 };
 
 const Skill: FunctionComponent<SkillProps> = ({ header, icons }) => {
@@ -51,10 +62,10 @@ const Skill: FunctionComponent<SkillProps> = ({ header, icons }) => {
     <React.Fragment>
       <div className="article-subtitle skill-header">{header}</div>
       <div className="row skill-icons">
-        {icons.map((icon, index) => (
-          <div key={index} className="skill-icon">
-            {icon.svg}
-          </div>
+        {icons.map((item, index) => (
+          <React.Fragment key={index}>
+            <SkillIcon icon={item} />
+          </React.Fragment>
         ))}
       </div>
     </React.Fragment>
@@ -83,7 +94,12 @@ export default class Skills extends Component<{}> {
     { svg: <IconReact /> },
     { svg: <IconXamarin /> },
   ];
-  iconsDatabases: TIcon[] = [{ svg: <IconInflux /> }, { svg: <IconMicrosoftsqlserver /> }, { svg: <IconMysql /> }, { svg: <IconSqlite /> }];
+  iconsDatabases: TIcon[] = [
+    { svg: <IconInflux /> },
+    { svg: <IconMicrosoftsqlserver /> },
+    { svg: <IconMysql /> },
+    { svg: <IconSqlite /> },
+  ];
   iconsIdeTools: TIcon[] = [
     { svg: <IconDocker /> },
     { svg: <IconGithub /> },
@@ -113,6 +129,7 @@ export default class Skills extends Component<{}> {
              SQLite, with personal further projects utilizing Influxdb.`,
           ]}
         />
+        {/* prettier-ignore */}
         <Skill header="Programming languages &amp; IDE's" icons={this.iconsProgLanguages} />
         <Skill header="Frameworks &amp; Libraries" icons={this.iconsFwsLibs} />
         <Skill header="Databases" icons={this.iconsDatabases} />
