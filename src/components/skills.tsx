@@ -41,6 +41,7 @@ import IconRaspberrypi from "../../static/assets/skills/raspberrypi.svg";
 import IconZigbee from "../../static/assets/skills/zigbee.svg";
 
 type TIcon = { svg: JSX.Element; title: string /*iconElementRef: TDivRef; titleElementRef: TDivRef */ };
+type TSkill = { header: string; icons: TIcon[] };
 
 type SkillIconProps = {
   icon: TIcon;
@@ -129,6 +130,14 @@ export default class Skills extends Component<{}> {
     { svg: <IconRaspberrypi />,         title: "Raspberry PI" },
     { svg: <IconZigbee />,              title: "Zigbee" },
   ];
+  // prettier-ignore
+  skillList: TSkill[] = [
+    { header: "Programming languages &amp; IDE's",  icons: this.iconsProgLanguages },
+    { header: "Frameworks &amp; Libraries",         icons: this.iconsFwsLibs },
+    { header: "Databases",                          icons: this.iconsDatabases },
+    { header: "IDE's &amp; Tools",                  icons: this.iconsIdeTools },
+    { header: "Test/Measurement &amp; IoT",         icons: this.iconsTMIot },
+  ];
 
   render() {
     return (
@@ -141,11 +150,9 @@ export default class Skills extends Component<{}> {
              SQLite, with personal further projects utilizing Influxdb.`,
           ]}
         />
-        <Skill header="Programming languages &amp; IDE's" icons={this.iconsProgLanguages} />
-        <Skill header="Frameworks &amp; Libraries" icons={this.iconsFwsLibs} />
-        <Skill header="Databases" icons={this.iconsDatabases} />
-        <Skill header="IDE's &amp; Tools" icons={this.iconsIdeTools} />
-        <Skill header="Test/Measurement &amp; IoT" icons={this.iconsTMIot} />
+        {this.skillList.map((item, index) => (
+          <Skill key={index} header={item.header} icons={item.icons} />
+        ))}
       </div>
     );
   }
