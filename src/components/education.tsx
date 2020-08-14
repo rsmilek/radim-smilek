@@ -1,7 +1,7 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import Article from "./article";
 
-const Education = () => {
+const Education: FunctionComponent = () => {
   return (
     <div className="container" id="education">
       <Article

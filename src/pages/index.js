@@ -7,7 +7,7 @@ import HeroHeader from "../components/heroHeader";
 import MainNavbar from "../components/mainNavbar";
 import ContactMe from "../components/contactMe";
 import SkillsAnim from "../components/skills";
-import Education from "../components/Education";
+import Education from "../components/education";
 
 const IndexPage = ({
   data: {
