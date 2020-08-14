@@ -1,8 +1,8 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import Article from "./article";
 import { StaticQuery, graphql, Link } from "gatsby";
 
-const HeroHeader = () => (
+const HeroHeader: FunctionComponent<{}> = () => (
   <StaticQuery
     query={graphql`
       query HeadingQuery {
