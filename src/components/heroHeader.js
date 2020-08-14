@@ -1,7 +1,8 @@
 import React from "react";
 import Article from "./article";
 import { StaticQuery, graphql, Link } from "gatsby";
-export default () => (
+
+const HeroHeader = () => (
   <StaticQuery
     query={graphql`
       query HeadingQuery {
@@ -34,3 +35,5 @@ export default () => (
     )}
   />
 );
+
+export default HeroHeader;
