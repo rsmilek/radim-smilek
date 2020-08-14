@@ -47,7 +47,8 @@ type TDiv = HTMLDivElement | null;
 type TIcon = {
   svg: JSX.Element;
   title: string;
-  /*iconElementRef: TDivRef; titleElementRef: TDivRef */
+  iconElementRef: TDivRef;
+  titleElementRef: TDivRef;
 };
 
 type SkillIconProps = {
@@ -64,8 +65,10 @@ const SkillIcon: FunctionComponent<SkillIconProps> = ({ icon }) => {
   return (
     <div className="iconWrapper">
       <div className="iconBox">
-        <div className="imgFluid" /*ref={icon.iconElementRef}*/>{icon.svg}</div>
-        <div className="iconBoxCaption" /*ref={icon.titleElementRef}*/>
+        <div className="imgFluid" ref={icon.iconElementRef}>
+          {icon.svg}
+        </div>
+        <div className="iconBoxCaption" ref={icon.titleElementRef}>
           <div className="iconTitle">{icon.title}</div>
         </div>
       </div>
@@ -91,78 +94,77 @@ const Skill: FunctionComponent<SkillProps> = ({ header, headerElementRef, icons 
 };
 
 export default class Skills extends Component<{}> {
+  // prettier-ignore
   skills: SkillProps[] = [
     {
       header: "Programming languages &amp; IDE's",
       headerElementRef: createRef(),
       icons: [
-        { svg: <IconC />, title: "C" },
-        { svg: <IconCss3 />, title: "CSS3" },
-        { svg: <IconCsharp />, title: "C#" },
-        { svg: <IconDelphi />, title: "Delphi" },
-        { svg: <IconGraphql />, title: "GraphQL" },
-        { svg: <IconHtml5 />, title: "HTML5" },
-        { svg: <IconJavascript />, title: "Javascript" },
-        { svg: <IconPython />, title: "Python" },
-        { svg: <IconSass />, title: "Sass" },
+        { svg: <IconC />, title: "C", iconElementRef: createRef(), titleElementRef: createRef() },
+        { svg: <IconCss3 />, title: "CSS3", iconElementRef: createRef(), titleElementRef: createRef() },
+        { svg: <IconCsharp />, title: "C#", iconElementRef: createRef(), titleElementRef: createRef() },
+        { svg: <IconDelphi />, title: "Delphi", iconElementRef: createRef(), titleElementRef: createRef() },
+        { svg: <IconGraphql />, title: "GraphQL", iconElementRef: createRef(), titleElementRef: createRef() },
+        { svg: <IconHtml5 />, title: "HTML5", iconElementRef: createRef(), titleElementRef: createRef() },
+        { svg: <IconJavascript />, title: "Javascript", iconElementRef: createRef(), titleElementRef: createRef() },
+        { svg: <IconPython />, title: "Python", iconElementRef: createRef(), titleElementRef: createRef() },
+        { svg: <IconSass />, title: "Sass", iconElementRef: createRef(), titleElementRef: createRef() },
       ],
     },
     {
       header: "Frameworks &amp; Libraries",
       headerElementRef: createRef(),
       icons: [
-        { svg: <IconBootstrap />, title: "Bootstrap" },
-        { svg: <IconDotnet />, title: ".NET" },
-        { svg: <IconGatsby />, title: "Gatsby" },
-        { svg: <IconJquery />, title: "JQuery" },
-        { svg: <IconNextjs />, title: "NextJS" },
-        { svg: <IconNodejs />, title: "NodeJS" },
-        { svg: <IconReact />, title: "React" },
-        { svg: <IconXamarin />, title: "Xamarin" },
+        { svg: <IconBootstrap />, title: "Bootstrap", iconElementRef: createRef(), titleElementRef: createRef() },
+        { svg: <IconDotnet />, title: ".NET", iconElementRef: createRef(), titleElementRef: createRef() },
+        { svg: <IconGatsby />, title: "Gatsby", iconElementRef: createRef(), titleElementRef: createRef() },
+        { svg: <IconJquery />, title: "JQuery", iconElementRef: createRef(), titleElementRef: createRef() },
+        { svg: <IconNextjs />, title: "NextJS", iconElementRef: createRef(), titleElementRef: createRef() },
+        { svg: <IconNodejs />, title: "NodeJS", iconElementRef: createRef(), titleElementRef: createRef() },
+        { svg: <IconReact />, title: "React", iconElementRef: createRef(), titleElementRef: createRef() },
+        { svg: <IconXamarin />, title: "Xamarin", iconElementRef: createRef(), titleElementRef: createRef() },
       ],
     },
     {
       header: "Databases",
       headerElementRef: createRef(),
       icons: [
-        { svg: <IconInflux />, title: "Influx" },
-        { svg: <IconMssqlserver />, title: "MS SQL" },
-        { svg: <IconMysql />, title: "MySQL" },
-        { svg: <IconSqlite />, title: "SQLite" },
+        { svg: <IconInflux />, title: "Influx", iconElementRef: createRef(), titleElementRef: createRef() },
+        { svg: <IconMssqlserver />, title: "MS SQL", iconElementRef: createRef(), titleElementRef: createRef() },
+        { svg: <IconMysql />, title: "MySQL", iconElementRef: createRef(), titleElementRef: createRef() },
+        { svg: <IconSqlite />, title: "SQLite", iconElementRef: createRef(), titleElementRef: createRef() },
       ],
     },
     {
       header: "IDE's &amp; Tools",
       headerElementRef: createRef(),
       icons: [
-        { svg: <IconDocker />, title: "Docker" },
-        { svg: <IconGithub />, title: "Github" },
-        { svg: <IconNpm />, title: "NPM" },
-        { svg: <IconNuget />, title: "Nuget" },
-        { svg: <IconSubversion />, title: "SVN" },
-        { svg: <IconVisualStudio />, title: "VS" },
-        { svg: <IconVisualStudioCode />, title: "VS Code" },
-        { svg: <IconYarn />, title: "Yarn" },
+        { svg: <IconDocker />, title: "Docker", iconElementRef: createRef(), titleElementRef: createRef() },
+        { svg: <IconGithub />, title: "Github", iconElementRef: createRef(), titleElementRef: createRef() },
+        { svg: <IconNpm />, title: "NPM", iconElementRef: createRef(), titleElementRef: createRef() },
+        { svg: <IconNuget />, title: "Nuget", iconElementRef: createRef(), titleElementRef: createRef() },
+        { svg: <IconSubversion />, title: "SVN", iconElementRef: createRef(), titleElementRef: createRef() },
+        { svg: <IconVisualStudio />, title: "VS", iconElementRef: createRef(), titleElementRef: createRef() },
+        { svg: <IconVisualStudioCode />, title: "VS Code", iconElementRef: createRef(), titleElementRef: createRef() },
+        { svg: <IconYarn />, title: "Yarn", iconElementRef: createRef(), titleElementRef: createRef() },
       ],
     },
     {
       header: "Test/Measurement &amp; IoT",
       headerElementRef: createRef(),
       icons: [
-        { svg: <IconNationalInstruments />, title: "National Instruments" },
-        { svg: <IconLabview />, title: "Labview" },
-        { svg: <IconArduino />, title: "Arduino" },
-        { svg: <IconRaspberrypi />, title: "Raspberry PI" },
-        { svg: <IconZigbee />, title: "Zigbee" },
+        { svg: <IconNationalInstruments />, title: "National Instruments", iconElementRef: createRef(), titleElementRef: createRef() },
+        { svg: <IconLabview />, title: "Labview", iconElementRef: createRef(), titleElementRef: createRef() },
+        { svg: <IconArduino />, title: "Arduino", iconElementRef: createRef(), titleElementRef: createRef() },
+        { svg: <IconRaspberrypi />, title: "Raspberry PI", iconElementRef: createRef(), titleElementRef: createRef() },
+        { svg: <IconZigbee />, title: "Zigbee", iconElementRef: createRef(), titleElementRef: createRef() },
       ],
     },
   ];
   myTween = gsap.timeline({ paused: true });
 
   componentDidMount() {
-    this.skills.forEach((item, index) => {
-      this.myTween.from(item.headerElementRef!.current, { opacity: 0 }, 1 + index * 0.5);
-    });
+    this.bindAnimation();
     this.myTween.play();
   }
 
@@ -182,5 +184,36 @@ export default class Skills extends Component<{}> {
         ))}
       </div>
     );
+  }
+
+  bindAnimation() {
+    const STAGGER = 0.3;
+    this.skills.forEach((skill, index) => {
+      const iconElementsCurrent: TDiv[] = skill.icons.map((item) => item.iconElementRef!.current); // ! - Non-null assertion operator
+      const titleElementsCurrent: TDiv[] = skill.icons.map((item) => item.titleElementRef!.current);
+      const DURATION = skill.icons.length * STAGGER;
+      const OFFSET = 3 + 0.3 * index;
+      this.myTween
+        // Header - Show
+        .from(skill.headerElementRef!.current, { opacity: 0 }, 0 + OFFSET)
+        // Title - Show
+        .to(
+          titleElementsCurrent,
+          { duration: DURATION, scale: 1, opacity: 1, delay: 0, stagger: STAGGER, ease: "elastic", force3D: true },
+          0 + OFFSET
+        )
+        // Title - Hide
+        .to(
+          titleElementsCurrent,
+          { duration: DURATION, scale: 1, opacity: 0, delay: 0, stagger: STAGGER, ease: "elastic", force3D: true },
+          OFFSET + STAGGER + 0.1
+        )
+        // Icon - Show
+        .from(
+          iconElementsCurrent,
+          { duration: DURATION, scale: 0.5, opacity: 0, delay: 0, stagger: STAGGER, ease: "elastic", force3D: true },
+          OFFSET + 2 * STAGGER
+        );
+    });
   }
 }
