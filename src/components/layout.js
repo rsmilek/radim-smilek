@@ -4,7 +4,7 @@ import React from "react";
 import Footer from "../components/footer";
 import "prismjs/themes/prism-okaidia.css";
 
-export default ({ children }) => {
+const Layout = ({ children }) => {
   // const data = useStaticQuery(
   //   graphql`
   //     query {
@@ -38,3 +38,5 @@ export default ({ children }) => {
     </div>
   );
 };
+
+export default Layout;
