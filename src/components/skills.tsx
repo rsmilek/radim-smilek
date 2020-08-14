@@ -1,4 +1,5 @@
 import React, { Component, FunctionComponent, RefObject, createRef } from "react";
+import gsap from "gsap";
 import Article from "./Article";
 // Icons - Programming languages
 import IconC from "../../static/assets/skills/c.svg";
@@ -41,6 +42,7 @@ import IconRaspberrypi from "../../static/assets/skills/raspberrypi.svg";
 import IconZigbee from "../../static/assets/skills/zigbee.svg";
 
 type TDivRef = RefObject<HTMLDivElement> | null;
+type TDiv = HTMLDivElement | null;
 
 type TIcon = {
   svg: JSX.Element;
@@ -74,8 +76,10 @@ const SkillIcon: FunctionComponent<SkillIconProps> = ({ icon }) => {
 const Skill: FunctionComponent<SkillProps> = ({ header, headerElementRef, icons }) => {
   return (
     <React.Fragment>
-      <div className="article-subtitle skill-header">{header}</div>
-      <div className="skill-container" ref={headerElementRef}>
+      <div className="article-subtitle skill-header" ref={headerElementRef}>
+        {header}
+      </div>
+      <div className="skill-container">
         {icons.map((item, index) => (
           <React.Fragment key={index}>
             <SkillIcon icon={item} />
@@ -153,9 +157,13 @@ export default class Skills extends Component<{}> {
       ],
     },
   ];
+  myTween = gsap.timeline({ paused: true });
 
   componentDidMount() {
-    console.log(this.skills[0].headerElementRef?.current);
+    this.skills.forEach((item, index) => {
+      this.myTween.from(item.headerElementRef!.current, { opacity: 0 }, 1 + index * 0.5);
+    });
+    this.myTween.play();
   }
 
   render() {
