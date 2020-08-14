@@ -6,9 +6,10 @@ import PostLink from "../components/post-link";
 import HeroHeader from "../components/heroHeader";
 import MainNavbar from "../components/mainNavbar";
 import ContactMe from "../components/contactMe";
-import Skills from "../components/skills";
+import SkillsAnim from "../components/skills";
 import Education from "../components/Education";
-import { /*GsapTitleIcon,*/ GsapTitleIconAnim } from "../components/gsapTitleIcon";
+// import GsapTitleIcon, {  GsapTitleIconAnim } from "../components/gsapTitleIcon";
+// import { GsapTitleIconAnim } from "../components/gsapTitleIcon";
 
 const IndexPage = ({
   data: {
@@ -28,8 +29,8 @@ const IndexPage = ({
       </Helmet>
       <MainNavbar />
       {/* <GsapTitleIcon /> */}
-      <GsapTitleIconAnim />
-      <Skills />
+      {/* <GsapTitleIconAnim /> */}
+      <SkillsAnim />
       <Education />
       <ContactMe />
       <HeroHeader />

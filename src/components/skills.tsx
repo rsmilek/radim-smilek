@@ -1,5 +1,6 @@
 import React, { Component, FunctionComponent, RefObject, createRef } from "react";
 import gsap from "gsap";
+import { InView } from "react-intersection-observer";
 import Article from "./Article";
 // Icons - Programming languages
 import IconC from "../../static/assets/skills/c.svg";
@@ -55,12 +56,7 @@ type SkillIconProps = {
   icon: TIcon;
 };
 
-type SkillProps = {
-  header: string;
-  headerElementRef: TDivRef;
-  icons: TIcon[];
-};
-
+// Displays one icon of personal skill
 const SkillIcon: FunctionComponent<SkillIconProps> = ({ icon }) => {
   return (
     <div className="iconWrapper">
@@ -76,6 +72,13 @@ const SkillIcon: FunctionComponent<SkillIconProps> = ({ icon }) => {
   );
 };
 
+type SkillProps = {
+  header: string;
+  headerElementRef: TDivRef;
+  icons: TIcon[];
+};
+
+// Displays one category/row of personal skill = header + icons
 const Skill: FunctionComponent<SkillProps> = ({ header, headerElementRef, icons }) => {
   return (
     <React.Fragment>
@@ -93,7 +96,19 @@ const Skill: FunctionComponent<SkillProps> = ({ header, headerElementRef, icons 
   );
 };
 
-export default class Skills extends Component<{}> {
+type SkillsProps = {
+  enableAnimation: boolean; // Enables animation of skills
+  autoPlayAnimation: boolean; // True if automatically start animation on component mount; valid if animation enabled only
+  isInView: boolean; // True if component is in view-port otherwise False, Notification from react intersection observer; valid if animation enabled only
+};
+
+// Displays personal skills in animated form, optionally if active in browser's view-port, see "SkillsAnim" component
+export class Skills extends Component<SkillsProps> {
+  static defaultProps = {
+    doAnimation: false,
+    autoPlayAnimation: true,
+    isInView: false,
+  };
   // prettier-ignore
   skills: SkillProps[] = [
     {
@@ -164,8 +179,14 @@ export default class Skills extends Component<{}> {
   animationTween = gsap.timeline({ paused: true });
 
   componentDidMount() {
-    this.bindAnimation();
-    this.animationTween.play();
+    if (this.props.enableAnimation) {
+      this.bindAnimation();
+      if (this.props.autoPlayAnimation) this.animationTween.play();
+    }
+  }
+
+  componentDidUpdate() {
+    if (this.props.enableAnimation && this.props.isInView) this.animationTween.restart();
   }
 
   render() {
@@ -193,7 +214,7 @@ export default class Skills extends Component<{}> {
       const iconElementsCurrent: TDiv[] = skill.icons.map((item) => item.iconElementRef!.current); // ! - Non-null assertion operator
       const titleElementsCurrent: TDiv[] = skill.icons.map((item) => item.titleElementRef!.current);
       const DURATION = skill.icons.length * STAGGER;
-      const OFFSET = 3 + 0.3 * index;
+      const OFFSET = 0.3 * index;
       this.animationTween
         // Header - Show
         .from(headerElementCurrent, { opacity: 0 }, 0 + OFFSET)
@@ -218,3 +239,16 @@ export default class Skills extends Component<{}> {
     });
   }
 }
+
+// Displays personal skills in animated form when active in browser's view-port
+const SkillsAnim: FunctionComponent<{}> = () => (
+  <InView threshold={0.5}>
+    {({ inView, ref, entry }) => (
+      <div ref={ref}>
+        <Skills enableAnimation={true} autoPlayAnimation={false} isInView={inView} />
+      </div>
+    )}
+  </InView>
+);
+
+export default SkillsAnim;
