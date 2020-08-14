@@ -2,14 +2,15 @@ import React, { Component } from "react";
 import $ from "jquery"; // Bootstrap core JS
 import ThemeChanger from "./themeChanger";
 
-export default class MainNavbar extends Component {
-  constructor(props) {
+export default class MainNavbar extends Component<{}> {
+  constructor(props: any) {
     super(props);
     this.state = {};
   }
 
   // Event handler - Collapse Navbar
   navbarCollapse = () => {
+    // @ts-ignore
     if ($("#mainNavbar").offset().top > 100) {
       $("#mainNavbar").addClass("navbar-scrolled");
     } else {
@@ -19,12 +20,14 @@ export default class MainNavbar extends Component {
 
   componentDidMount() {
     // Activate scrollspy to add active class to navbar items on scroll
+    // @ts-ignore
     $("body").scrollspy({
       target: "#mainNavbar",
       offset: 75,
     });
     // Closes responsive menu when a scroll trigger link is clicked
     $(".js-scroll-trigger").click(function() {
+      // @ts-ignore
       $(".navbar-collapse").collapse("hide");
     });
     // Collapse now if page is not at top
@@ -34,14 +37,19 @@ export default class MainNavbar extends Component {
     // Smooth scrolling using jQuery easing
     $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
       if (
+        // @ts-ignore
         window.location.pathname.replace(/^\//, "") === this.pathname.replace(/^\//, "") &&
+        // @ts-ignore
         window.location.hostname === this.hostname
       ) {
+        // @ts-ignore
         var target = $(this.hash);
+        // @ts-ignore
         target = target.length ? target : $("[name=" + this.hash.slice(1) + "]");
         if (target.length) {
           $("html, body").animate(
             {
+              // @ts-ignore
               scrollTop: target.offset().top - 72,
             },
             1000,
