@@ -1,8 +1,14 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import IconGatsby from "../../static/assets/skills/gatsby.svg";
 import IconNetlify from "../../static/assets/skills/netlify.svg";
 
-const FooterIconLink = ({ title, href, icon }) => {
+type FooterIconLinkProps = {
+  title: string;
+  href: string;
+  icon: JSX.Element;
+};
+
+const FooterIconLink: FunctionComponent<FooterIconLinkProps> = ({ title, href, icon }) => {
   return (
     <a href={href} target="_blank" rel="noopener noreferrer">
       {title} <div className="footer-icon baseline">{icon}</div>
@@ -10,7 +16,7 @@ const FooterIconLink = ({ title, href, icon }) => {
   );
 };
 
-const Footer = () => {
+const Footer: FunctionComponent<{}> = () => {
   return (
     <footer className="container footer">
       Copyright &copy; {new Date().getFullYear()} &bull; Designed &amp; developed by Radim Smílek with{" "}
