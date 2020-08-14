@@ -1,9 +1,10 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
+// @ts-ignore
 import Helmet from "react-helmet";
 import Layout from "../components/layout";
 import { Link } from "gatsby";
 
-const notFound = () => {
+const notFound: FunctionComponent<{}> = () => {
   return (
     <Layout>
       <Helmet>
