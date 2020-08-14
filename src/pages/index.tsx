@@ -49,6 +49,7 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({
 };
 
 export default IndexPage;
+
 export const pageQuery = graphql`
   query indexPageQuery {
     site {
