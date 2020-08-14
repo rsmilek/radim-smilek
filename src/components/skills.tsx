@@ -161,11 +161,11 @@ export default class Skills extends Component<{}> {
       ],
     },
   ];
-  myTween = gsap.timeline({ paused: true });
+  animationTween = gsap.timeline({ paused: true });
 
   componentDidMount() {
     this.bindAnimation();
-    this.myTween.play();
+    this.animationTween.play();
   }
 
   render() {
@@ -189,13 +189,14 @@ export default class Skills extends Component<{}> {
   bindAnimation() {
     const STAGGER = 0.3;
     this.skills.forEach((skill, index) => {
+      const headerElementCurrent: TDiv = skill.headerElementRef!.current;
       const iconElementsCurrent: TDiv[] = skill.icons.map((item) => item.iconElementRef!.current); // ! - Non-null assertion operator
       const titleElementsCurrent: TDiv[] = skill.icons.map((item) => item.titleElementRef!.current);
       const DURATION = skill.icons.length * STAGGER;
       const OFFSET = 3 + 0.3 * index;
-      this.myTween
+      this.animationTween
         // Header - Show
-        .from(skill.headerElementRef!.current, { opacity: 0 }, 0 + OFFSET)
+        .from(headerElementCurrent, { opacity: 0 }, 0 + OFFSET)
         // Title - Show
         .to(
           titleElementsCurrent,
