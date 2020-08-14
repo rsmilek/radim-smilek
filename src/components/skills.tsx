@@ -59,13 +59,13 @@ type SkillIconProps = {
 // Displays one icon of personal skill
 const SkillIcon: FunctionComponent<SkillIconProps> = ({ icon }) => {
   return (
-    <div className="iconWrapper">
-      <div className="iconBox">
-        <div className="imgFluid" ref={icon.iconElementRef}>
+    <div className="icon-wrapper">
+      <div className="icon-box">
+        <div className="image" ref={icon.iconElementRef}>
           {icon.svg}
         </div>
-        <div className="iconBoxCaption" ref={icon.titleElementRef}>
-          <div className="iconTitle">{icon.title}</div>
+        <div className="title-box" ref={icon.titleElementRef}>
+          <div className="title">{icon.title}</div>
         </div>
       </div>
     </div>
@@ -82,10 +82,10 @@ type SkillProps = {
 const Skill: FunctionComponent<SkillProps> = ({ header, headerElementRef, icons }) => {
   return (
     <React.Fragment>
-      <div className="article-subtitle skill-header" ref={headerElementRef}>
+      <div className="article-subtitle header" ref={headerElementRef}>
         {header}
       </div>
-      <div className="skill-container">
+      <div className="icons-container">
         {icons.map((item, index) => (
           <React.Fragment key={index}>
             <SkillIcon icon={item} />

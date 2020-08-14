@@ -7,6 +7,7 @@ import HeroHeader from "../components/heroHeader";
 import MainNavbar from "../components/mainNavbar";
 import ContactMe from "../components/contactMe";
 import SkillsAnim from "../components/skills";
+// import { Skills } from "../components/skills";
 import Education from "../components/Education";
 // import GsapTitleIcon, {  GsapTitleIconAnim } from "../components/gsapTitleIcon";
 // import { GsapTitleIconAnim } from "../components/gsapTitleIcon";
@@ -30,6 +31,7 @@ const IndexPage = ({
       <MainNavbar />
       {/* <GsapTitleIcon /> */}
       {/* <GsapTitleIconAnim /> */}
+      {/* <Skills /> */}
       <SkillsAnim />
       <Education />
       <ContactMe />

@@ -1,83 +1,61 @@
 .skills {
-  .skill-header {
+  .header {
     margin-top: 14px;
     margin-bottom: 10px;
   }
 
-  .skill-icons {
-    margin-left: 0px;
-  }
-
-  .skill-icon {
-    margin-right: 15px;
-    width: 48px;
-    height: 48px;
-
-    svg {
-      path {
-        fill: var(--text-secondary-color);
-      }
-    }
-  }
-
-  .skill-container {
+  .icons-container {
     display: flex;
     flex-wrap: wrap;
-    /* From original bootstrap row */
-    // margin-right: -15px;
-    // margin-left: -15px;
-  }
 
-  .iconWrapper {
-    width: 48px;
-    height: 48px;
-    margin-right: 20px;
-    margin-bottom: 10px;
-  }
+    .icon-wrapper {
+      width: 48px;
+      height: 48px;
+      margin-right: 20px;
+      margin-bottom: 10px;
 
-  .iconBox {
-    position: relative;
-    display: block;
-  }
+      .icon-box {
+        position: relative;
+        display: block;
 
-  .imgFluid {
-    max-width: 100%;
-    height: auto;
-    // opacity: 0; /* Just for debugging */
-    svg {
-      path {
-        fill: var(--text-secondary-color);
+        .image {
+          max-width: 100%;
+          height: auto;
+          // opacity: 0; /* Just for debugging */
+
+          svg {
+            path {
+              fill: var(--text-secondary-color);
+            }
+          }
+        }
+
+        .title-box {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          bottom: 0;
+          text-align: center;
+          opacity: 0;
+          /* Just for debugging */
+          color: var(--text-secondary-color);
+          transition: opacity 0.25s ease;
+          text-align: center;
+
+          /* Just for debugging */
+          // &:hover {
+          //   opacity: 1;
+          // }
+
+          .title {
+            font-size: 1rem;
+          }
+        }
       }
     }
   }
-
-  .iconBox .iconBoxCaption {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    bottom: 0;
-    text-align: center;
-    opacity: 0; /* Just for debugging */
-    color: var(--text-secondary-color);
-    transition: opacity 0.25s ease;
-    text-align: center;
-  }
-
-  .iconBox .iconBoxCaption .iconTitle {
-    font-size: 1rem;
-  }
-
-  /* Just for debugging */
-  // .iconBox:hover .iconBoxCaption {
-  //   opacity: 1;
-  // }
-
-  /* Just for debugging */
-  // .iconBox:hover .imgFluid {
-  //   opacity: 0;
-  // }
 }
