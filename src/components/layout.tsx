@@ -1,10 +1,10 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 // import { Link, useStaticQuery, graphql } from "gatsby";
 // import Navigation from "../components/navigation";
-import Footer from "../components/footer";
+import Footer from "./footer";
 import "prismjs/themes/prism-okaidia.css";
 
-const Layout = ({ children }) => {
+const Layout: FunctionComponent<{}> = ({ children }) => {
   // const data = useStaticQuery(
   //   graphql`
   //     query {
