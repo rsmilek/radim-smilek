@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import Article from "./article";
 import IconEmail from "../../static/assets/social/email.svg";
 import IconLinkedin from "../../static/assets/social/linkedin.svg";
@@ -6,7 +6,12 @@ import IconGithub from "../../static/assets/social/github.svg";
 import IconFacebook from "../../static/assets/social/facebook.svg";
 import IconInstagram from "../../static/assets/social/instagram.svg";
 
-const SocialIcon = ({ icon, href }) => {
+type SocialIconProps = {
+  icon: JSX.Element;
+  href: string;
+};
+
+const SocialIcon: FunctionComponent<SocialIconProps> = ({ icon, href }) => {
   return (
     <a className="social-icon" href={href} target="_blank" rel="noopener noreferrer">
       {icon}
@@ -14,11 +19,17 @@ const SocialIcon = ({ icon, href }) => {
   );
 };
 
-const ContactInput = ({ id, type, placeholder }) => {
+type ContactInputProps = {
+  id: string;
+  type: string;
+  placeholder: string;
+};
+
+const ContactInput: FunctionComponent<ContactInputProps> = ({ id, type, placeholder }) => {
   return <input className="p-1 mb-2" type={type} name={id} id={id} placeholder={placeholder} />;
 };
 
-const ContactMe = () => {
+const ContactMe: FunctionComponent<{}> = () => {
   return (
     <div className="container mt-3" id="contactme">
       <div className="row">
