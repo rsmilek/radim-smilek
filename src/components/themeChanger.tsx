@@ -1,8 +1,10 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
+// @ts-ignore
 import { ThemeToggler } from "gatsby-plugin-dark-mode";
 
-const ThemeChanger = () => (
+const ThemeChanger: FunctionComponent<{}> = () => (
   <ThemeToggler>
+    {/* @ts-ignore */}
     {({ theme, toggleTheme }) => (
       <label htmlFor="changer">
         <input
