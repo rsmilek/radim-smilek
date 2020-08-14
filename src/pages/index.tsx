@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
@@ -9,15 +9,27 @@ import ContactMe from "../components/contactMe";
 import SkillsAnim from "../components/skills";
 import Education from "../components/education";
 
-const IndexPage = ({
+type IndexPageProps = {
+  data: {
+    site: {
+      siteMetadata: {
+        title: string;
+        description: string;
+      };
+    };
+    allMarkdownRemark: { edges: any };
+  };
+};
+
+const IndexPage: FunctionComponent<IndexPageProps> = ({
   data: {
     site,
     allMarkdownRemark: { edges },
   },
 }) => {
   const Posts = edges
-    .filter((edge) => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
-    .map((edge) => <PostLink key={edge.node.id} post={edge.node} />);
+    .filter((edge: any) => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
+    .map((edge: any) => <PostLink key={edge.node.id} post={edge.node} />);
 
   return (
     <Layout>

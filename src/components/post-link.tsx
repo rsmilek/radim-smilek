@@ -1,7 +1,12 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import { Link } from "gatsby";
 
-const PostLink = ({ post }) => (
+type PostLinkProps = {
+  key: any;
+  post: any;
+};
+
+const PostLink: FunctionComponent<PostLinkProps> = ({ post }) => (
   <article className="card ">
     <Link to={post.frontmatter.path}>
       {!!post.frontmatter.thumbnail && (
