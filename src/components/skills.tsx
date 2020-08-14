@@ -64,8 +64,8 @@ const SkillIcon: FunctionComponent<SkillIconProps> = ({ icon }) => {
         <div className="image" ref={icon.iconElementRef}>
           {icon.svg}
         </div>
-        <div className="title-box" ref={icon.titleElementRef}>
-          <div className="title">{icon.title}</div>
+        <div className="title" ref={icon.titleElementRef}>
+          {icon.title}
         </div>
       </div>
     </div>

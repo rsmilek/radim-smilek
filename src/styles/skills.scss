@@ -36,7 +36,7 @@
           }
         }
 
-        .title-box {
+        .title {
           display: flex;
           align-items: center;
           justify-content: center;
@@ -51,15 +51,13 @@
           color: var(--text-secondary-color);
           transition: opacity 0.25s ease;
           text-align: center;
+          font-size: 1rem;
 
           /* Just for debugging */
           // &:hover {
           //   opacity: 1;
           // }
 
-          .title {
-            font-size: 1rem;
-          }
         }
       }
     }
