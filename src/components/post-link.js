@@ -18,4 +18,5 @@ const PostLink = ({ post }) => (
     </header>
   </article>
 );
+
 export default PostLink;
