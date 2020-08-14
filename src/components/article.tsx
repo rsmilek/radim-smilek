@@ -1,6 +1,12 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 
-const Article = ({ title, paragraphs }) => {
+type ArticleProps = {
+  title: string;
+  paragraphs: string[];
+};
+
+// Displays resume's article
+const Article: FunctionComponent<ArticleProps> = ({ title, paragraphs }) => {
   return (
     <React.Fragment>
       <div className="article-title inline">{title}</div>

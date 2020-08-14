@@ -1,5 +1,5 @@
 import React from "react";
-import Article from "./Article";
+import Article from "./article";
 import { StaticQuery, graphql, Link } from "gatsby";
 export default () => (
   <StaticQuery
@@ -24,10 +24,7 @@ export default () => (
         /> */}
 
         <div style={{ marginTop: 60, marginBottom: 30 }}>
-          <Article
-            title={data.site.siteMetadata.home.title}
-            paragraphs={[data.site.siteMetadata.home.description]}
-          />
+          <Article title={data.site.siteMetadata.home.title} paragraphs={[data.site.siteMetadata.home.description]} />
         </div>
 
         <Link to="/contact" className="button -primary">

@@ -1,7 +1,7 @@
 import React, { Component, FunctionComponent, RefObject, createRef } from "react";
 import gsap from "gsap";
 import { InView } from "react-intersection-observer";
-import Article from "./Article";
+import Article from "./article";
 // Icons - Programming languages
 import IconC from "../../static/assets/skills/c.svg";
 import IconCss3 from "../../static/assets/skills/css3.svg";

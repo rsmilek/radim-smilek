@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Article from "./Article";
+import Article from "./article";
 import IconEmail from "../../static/assets/social/email.svg";
 import IconLinkedin from "../../static/assets/social/linkedin.svg";
 import IconGithub from "../../static/assets/social/github.svg";
@@ -42,11 +42,7 @@ export default class ContactMe extends Component {
             </div>
           </div>
           <div className="col-md">
-            <form
-              className="contactme"
-              action="https://sendmail.w3layouts.com/SubmitContactForm"
-              method="post"
-            >
+            <form className="contactme" action="https://sendmail.w3layouts.com/SubmitContactForm" method="post">
               <div className="d-flex flex-column primary-content">
                 <ContactInput id="w3lName" type="text" placeholder="Name" />
                 <ContactInput id="w3lSender" type="email" placeholder="Email" />
