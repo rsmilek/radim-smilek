@@ -1,5 +1,12 @@
-$font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell,
-  "Helvetica Neue", sans-serif;
+$font-family: -apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+Roboto,
+Oxygen-Sans,
+Ubuntu,
+Cantarell,
+"Helvetica Neue",
+sans-serif;
 
 $colorPrimaryLight: #ff8a50;
 $colorPrimaryMain: #ff5722;
@@ -18,9 +25,11 @@ body {
   margin: 0;
   padding: 0;
 }
+
 * {
   margin-top: 0;
 }
+
 body.light {
   // --primary-color: #381696;
   --primary-color: #{$colorPrimaryMain};
@@ -48,7 +57,9 @@ body.light {
   --color-primary-text-contrast: #{$colorSecondaryDark};
   --navbar-box-color: black;
   --contactme-bg: #f5f5f5;
+  --home-bg: linear-gradient(to bottom, rgba(180, 179, 179, 0.8) 0%, rgba(216, 211, 207, 0.8) 100%), url("../images/bg-resume-wide.jpg");
 }
+
 body.dark {
   // --primary-color: #9984d5;
   --primary-color: #{$colorPrimaryMain};
@@ -78,7 +89,7 @@ body.dark {
   --color-primary-text-contrast: #{$colorSecondaryDark};
   --navbar-box-color: white;
   --contactme-bg: #181326;
-  
+  --home-bg: linear-gradient(to bottom, rgba(43, 42, 42, 0.8) 0%, rgba(26, 25, 24, 0.8) 100%), url("../images/bg-resume-wide.jpg");
 }
 
 //RSm, see .headline also
@@ -98,42 +109,52 @@ body {
   background-color: var(--background);
   color: var(--text-color);
 }
+
 a {
   color: var(--primary-color);
   text-decoration: none;
+
   &:hover {
     text-decoration: underline;
     color: var(--secondary-color); //RSm
   }
 }
+
 .site-wrapper {
   padding: 32px;
   max-width: 1140px;
   margin: 0 auto;
+
   img {
     max-width: 100%;
   }
 }
+
 .navigation {
   display: flex;
   align-items: center;
   font-weight: 300;
+
   a {
     color: #888;
     text-decoration: none;
     margin: 0 8px 0;
+
     &[aria-current] {
       color: var(--primary-color);
       font-weight: 700;
     }
+
     &:hover {
       color: var(--primary-color);
     }
+
     &:last-child {
       margin-right: 0;
     }
   }
 }
+
 .site-header {
   display: flex;
   justify-content: space-between;
@@ -142,22 +163,26 @@ a {
   margin-bottom: 32px;
   align-items: center;
 }
+
 .site-title a {
   color: var(--primary-color);
   text-decoration: none;
   font-weight: 900;
   text-transform: uppercase;
 }
+
 .hero-header {
   padding: 0 0 64px;
   max-width: 980px;
 }
+
 .headline {
   font-size: 36px;
   font-weight: 900;
   margin-bottom: 0.5rem;
   // color: var(--secondary-color); //RSm
 }
+
 .button {
   padding: 18px 27px;
   display: inline-block;
@@ -169,11 +194,13 @@ a {
   font-size: 16px;
   font-weight: 400;
   margin: 0 20px 0 0;
+
   // transition: background-color 0.3s linear; //RSm
   &.-primary {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
     color: var(--primary-text-color);
+
     &:hover {
       background-color: var(--secondary-color);
       border-color: var(--secondary-color); //RSm
@@ -181,30 +208,36 @@ a {
       text-decoration: none;
     }
   }
+
   &:hover {
     background-color: var(--btn-hover-bg);
     color: var(--btn-hover-text-color);
   }
 }
+
 .primary-content {
   font-size: 18px;
   margin-bottom: 32px;
   line-height: 1.5;
   font-weight: 300;
 }
+
 .post {
   padding: 0;
   background: var(--background);
   color: var(--text-color);
   line-height: 1.5;
-  > .blog-post-content {
+
+  >.blog-post-content {
     max-width: 768px;
     margin: 0 auto;
   }
-  > .blog-post-content *:last-child,
-  > *:last-child {
+
+  >.blog-post-content *:last-child,
+  >*:last-child {
     margin-bottom: 0;
   }
+
   .post-title {
     text-align: center;
     margin: 0 0 0.5rem;
@@ -212,11 +245,13 @@ a {
     font-size: 2rem;
     color: var(--primary-color); //RSm
   }
+
   .post-meta {
     margin-bottom: 32px;
     text-align: center;
   }
 }
+
 .post-thumbnail {
   text-align: center;
   min-height: 380px;
@@ -233,6 +268,7 @@ a {
   position: relative;
   padding: 18px;
   overflow: hidden;
+
   &:before {
     content: "";
     background: rgba(0, 0, 0, 0.4);
@@ -243,21 +279,25 @@ a {
     height: 100%;
     z-index: 1;
   }
-  > * {
+
+  >* {
     position: relative;
     z-index: 2;
   }
+
   .post-meta {
     color: rgba(255, 255, 255, 0.8);
     margin-bottom: 0;
   }
 }
+
 .grids {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 32px;
   margin-top: 32px;
 }
+
 .card {
   display: grid;
   background-color: var(--card-bg);
@@ -266,37 +306,46 @@ a {
   box-shadow: 0 0 30px var(--card-shadow);
   overflow: hidden;
   line-height: 1.5;
+
   &:hover .post-link {
     // color: var(--primary-color); //RSm
     color: var(--secondary-color);
   }
-  > a img {
+
+  >a img {
     display: block;
   }
-  > header {
+
+  >header {
     padding: 24px;
   }
-  > h2:first-child {
+
+  >h2:first-child {
     margin: 0 0 0.5rem 0;
   }
+
   .post-title {
     font-size: 1.2rem;
     margin-bottom: 0.3rem;
   }
+
   .post-meta {
     font-weight: 100;
     margin-bottom: 0;
   }
+
   .post-link {
     // color: var(--text-color); //RSm
     color: var(--primary-color);
     text-decoration: none;
   }
 }
+
 .post-meta {
   font-size: 0.8rem;
   color: var(--text-secondary-color);
 }
+
 // RSm
 // .site-footer {
 //   text-align: center;
@@ -311,11 +360,13 @@ a {
   padding: 32px;
   border: 1px solid var(--contact-bdr);
   border-radius: 9px;
+
   label {
     display: block;
     margin-bottom: 0.5rem;
     color: var(--text-secondary-color);
   }
+
   input[type="text"],
   input[type="email"],
   textarea {
@@ -330,30 +381,36 @@ a {
     background-color: var(--input-bg);
     font-family: $font-family;
   }
+
   textarea {
     margin-bottom: 2rem;
     height: 150px;
   }
 }
+
 .two-grids {
   display: grid;
   grid-gap: 32px;
+
   &.-contact {
     .post-thumbnail {
       min-height: 240px !important;
     }
   }
 }
+
 /* Portrait and Landscape */
 @media only screen and (min-width: 768px) {
   .grids {
     grid-template-columns: 1fr 1fr;
   }
 }
+
 @media only screen and (min-width: 1024px) {
   .grids {
     grid-template-columns: 1fr 1fr 1fr;
   }
+
   .two-grids {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -367,20 +424,24 @@ a {
 .theme-changer {
   display: none;
 }
+
 body.dark {
   .gg-moon {
     display: none;
   }
 }
+
 body.light {
   .gg-sun {
     display: none;
   }
 }
+
 .mode-container {
   width: 24px;
   height: 24px;
 }
+
 // CSS.gg icons for sun and moon
 .gg-sun {
   box-sizing: border-box;
@@ -397,6 +458,7 @@ body.light {
   box-shadow: inset 0 0 0 2px;
   border: 6px solid transparent;
 }
+
 .gg-sun::after,
 .gg-sun::before {
   content: "";
@@ -410,18 +472,22 @@ body.light {
   left: -6px;
   top: 5px;
 }
+
 .gg-sun::before {
   transform: rotate(-45deg);
 }
+
 .gg-sun::after {
   transform: rotate(45deg);
 }
+
 .gg-moon,
 .gg-moon::after {
   display: block;
   box-sizing: border-box;
   border-radius: 50%;
 }
+
 .gg-moon {
   overflow: hidden;
   position: relative;
@@ -431,6 +497,7 @@ body.light {
   border: 2px solid;
   border-bottom-color: transparent;
 }
+
 .gg-moon::after {
   content: "";
   position: absolute;
@@ -446,6 +513,11 @@ body.light {
  * Component - mainNavbar
  */
 @import "./mainNavbar";
+
+/*
+ * Component - Home
+ */
+@import "./home";
 
 /*
  * Component - contactMe

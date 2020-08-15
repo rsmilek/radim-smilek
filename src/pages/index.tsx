@@ -1,10 +1,11 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, Fragment } from "react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import PostLink from "../components/post-link";
 import HeroHeader from "../components/heroHeader";
 import MainNavbar from "../components/mainNavbar";
+import Home from "../components/home";
 import ContactMe from "../components/contactMe";
 import SkillsAnim from "../components/skills";
 import Education from "../components/education";
@@ -32,19 +33,22 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({
     .map((edge: any) => <PostLink key={edge.node.id} post={edge.node} />);
 
   return (
-    <Layout>
-      <Helmet>
-        <title>{site.siteMetadata.title}</title>
-        <meta name="description" content={site.siteMetadata.description} />
-      </Helmet>
-      <MainNavbar />
-      <SkillsAnim />
-      <Education />
-      <ContactMe />
-      <HeroHeader />
-      <h2>Blog Posts &darr;</h2>
-      <div className="grids">{Posts}</div>
-    </Layout>
+    <Fragment>
+      <Home />
+      <Layout>
+        <Helmet>
+          <title>{site.siteMetadata.title}</title>
+          <meta name="description" content={site.siteMetadata.description} />
+        </Helmet>
+        <MainNavbar />
+        <SkillsAnim />
+        <Education />
+        <ContactMe />
+        <HeroHeader />
+        <h2>Blog Posts &darr;</h2>
+        <div className="grids">{Posts}</div>
+      </Layout>
+    </Fragment>
   );
 };
 

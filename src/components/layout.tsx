@@ -18,12 +18,12 @@ const Layout: FunctionComponent<{}> = ({ children }) => {
   // );
   return (
     <div className="site-wrapper">
-      <header className="site-header">
-        {/* <div className="site-title">
+      {/* <header className="site-header"> */}
+      {/* <div className="site-title">
           <Link to="/">{data.site.siteMetadata.title}</Link>
         </div> */}
-        {/* <Navigation /> */}
-      </header>
+      {/* <Navigation /> */}
+      {/* </header> */}
       {children}
       {/* <footer className="site-footer">
         <p>

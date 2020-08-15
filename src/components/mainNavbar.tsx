@@ -84,8 +84,8 @@ export default class MainNavbar extends Component<{}> {
               <span className="navbar-toggler-icon"></span>
             </button>
             {/* First in DOM, no order applied */}
-            <a className="navbar-brand js-scroll-trigger mr-auto" href="#pageTop">
-              Navbar
+            <a className="navbar-brand js-scroll-trigger mr-auto" href="#home">
+              Home
             </a>
             {/* Second in DOM, order 2, re-order 3 on large screens
               NOTE: Items to always show keep out of the navbar-collapse div */}
@@ -101,16 +101,6 @@ export default class MainNavbar extends Component<{}> {
             {/* Third in DOM, order 3, re-order 2 on large screens */}
             <div className="collapse navbar-collapse order-3 order-lg-2" id="navbarSupportedContent">
               <ul className="navbar-nav ml-auto">
-                <li className="nav-item">
-                  <a className="nav-link js-scroll-trigger" href="#mainNavbarHome">
-                    Home
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link js-scroll-trigger" href="#mainNavbarLink">
-                    Link
-                  </a>
-                </li>
                 <li className="nav-item">
                   <a className="nav-link js-scroll-trigger" href="#skills">
                     Skills
@@ -130,32 +120,6 @@ export default class MainNavbar extends Component<{}> {
             </div>
           </div>
         </nav>
-
-        <div className="mt-5">
-          <p className="p-5 m-5"></p>
-          <p className="p-5 m-5"></p>
-          <section id="mainNavbarHome">
-            <p className="p-5 m-5">Home</p>
-          </section>
-          <section id="mainNavbarLink">
-            <p className="p-5 m-5">Link</p>
-          </section>
-          <section id="mainNavbarDropdown">
-            <p className="p-5 m-5">Dropdown</p>
-          </section>
-          <section id="mainNavbarAction">
-            <p className="p-5 m-5">Action</p>
-          </section>
-          <section id="mainNavbarAnother">
-            <p className="p-5 m-5">Another</p>
-          </section>
-          <section id="mainNavbarSomething">
-            <p className="p-5 m-5">Something</p>
-          </section>
-          <section id="mainNavbarDisabled">
-            <p className="p-5 m-5">Disabled</p>
-          </section>
-        </div>
       </div>
     );
   }
