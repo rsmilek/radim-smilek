@@ -112,7 +112,7 @@ export class Skills extends Component<SkillsProps> {
   // prettier-ignore
   skills: SkillProps[] = [
     {
-      header: "Programming languages &amp; IDE's",
+      header: "Programming languages & IDE's",
       headerElementRef: createRef(),
       icons: [
         { svg: <IconC />, title: "C", iconElementRef: createRef(), titleElementRef: createRef() },
@@ -127,7 +127,7 @@ export class Skills extends Component<SkillsProps> {
       ],
     },
     {
-      header: "Frameworks &amp; Libraries",
+      header: "Frameworks & Libraries",
       headerElementRef: createRef(),
       icons: [
         { svg: <IconBootstrap />, title: "Bootstrap", iconElementRef: createRef(), titleElementRef: createRef() },
@@ -151,7 +151,7 @@ export class Skills extends Component<SkillsProps> {
       ],
     },
     {
-      header: "IDE's &amp; Tools",
+      header: "IDE's & Tools",
       headerElementRef: createRef(),
       icons: [
         { svg: <IconDocker />, title: "Docker", iconElementRef: createRef(), titleElementRef: createRef() },
@@ -165,7 +165,7 @@ export class Skills extends Component<SkillsProps> {
       ],
     },
     {
-      header: "Test/Measurement &amp; IoT",
+      header: "Test/Measurement & IoT",
       headerElementRef: createRef(),
       icons: [
         { svg: <IconNationalInstruments />, title: "National Instruments", iconElementRef: createRef(), titleElementRef: createRef() },
