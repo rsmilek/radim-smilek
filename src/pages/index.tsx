@@ -6,9 +6,10 @@ import PostLink from "../components/post-link";
 import HeroHeader from "../components/heroHeader";
 import MainNavbar from "../components/mainNavbar";
 import Home from "../components/home";
-import ContactMe from "../components/contactMe";
+import AboutMe from "../components/aboutMe";
 import SkillsAnim from "../components/skills";
 import Education from "../components/education";
+import ContactMe from "../components/contactMe";
 
 type IndexPageProps = {
   data: {
@@ -41,6 +42,7 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({
           <meta name="description" content={site.siteMetadata.description} />
         </Helmet>
         <MainNavbar />
+        <AboutMe />
         <SkillsAnim />
         <Education />
         <ContactMe />
