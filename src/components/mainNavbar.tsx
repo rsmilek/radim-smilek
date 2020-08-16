@@ -102,6 +102,11 @@ export default class MainNavbar extends Component<{}> {
             <div className="collapse navbar-collapse order-3 order-lg-2" id="navbarSupportedContent">
               <ul className="navbar-nav ml-auto">
                 <li className="nav-item">
+                  <a className="nav-link js-scroll-trigger" href="#about-me">
+                    About Me
+                  </a>
+                </li>
+                <li className="nav-item">
                   <a className="nav-link js-scroll-trigger" href="#skills">
                     Skills
                   </a>
