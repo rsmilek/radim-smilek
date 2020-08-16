@@ -9,6 +9,8 @@ export default class Home extends Component<{}> {
   headlineFirst: TDivRef = createRef();
   headlineSecond: TDivRef = createRef();
   headlineThird: TDivRef = createRef();
+  divider: TDivRef = createRef();
+  description: TDivRef = createRef();
   animationTween = gsap.timeline({ paused: true });
 
   componentDidMount() {
@@ -22,8 +24,9 @@ export default class Home extends Component<{}> {
         [this.headlineFirst!.current, this.headlineSecond!.current, this.headlineThird!.current],
         { opacity: 0, stagger: 0.1, ease: "power2.in" },
         0.2
-      );
-    //   .from(this.headlines!.current, { /*y: 20, */ opacity: 0, ease: "power3.out" }, 0.5);
+      )
+      .from(this.divider!.current, { opacity: 0, ease: "none", duration: 1 }, 0.3)
+      .from(this.description!.current, { opacity: 0, x: -200, ease: "elastic.out", duration: 2 }, 0.3);
     this.animationTween.play();
   }
   //   this.animationTween.from(
@@ -67,10 +70,12 @@ export default class Home extends Component<{}> {
                   software developer.
                 </h1>
               </div>
-              <hr className="divider my-4" />
+              <hr className="divider my-4" ref={this.divider} />
             </div>
             <div className="col-lg-8 align-self-baseline">
-              <h4 className="text-black font-weight-bold mb-5">Desktop &bull; Web &bull; Mobile</h4>
+              <h4 className="text-black font-weight-bold mb-5" ref={this.description}>
+                Desktop &bull; Web &bull; Mobile
+              </h4>
               <a className="button -primary" href="#skills">
                 Find Out More
               </a>
