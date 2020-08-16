@@ -57,7 +57,7 @@ export default class Home extends Component<{}> {
               <h4 className="text-black font-weight-bold mb-5" ref={(el) => (this.descriptionElement = el)}>
                 Desktop &bull; Web &bull; Mobile
               </h4>
-              <a className="button -primary" href="#skills">
+              <a className="button -primary js-scroll-trigger" href="#about-me">
                 Find Out More
               </a>
             </div>

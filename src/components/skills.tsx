@@ -191,7 +191,7 @@ export class Skills extends Component<SkillsProps> {
 
   render() {
     return (
-      <div className="container skills" id="skills">
+      <div className="container resume-section skills" id="skills">
         <Article
           title="Skills"
           paragraphs={[

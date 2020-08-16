@@ -509,6 +509,10 @@ body.light {
   left: 2px;
 }
 
+.resume-section {
+  margin-bottom: 2rem;
+}
+
 /*
  * Component - mainNavbar
  */
@@ -518,6 +522,11 @@ body.light {
  * Component - Home
  */
 @import "./home";
+
+/*
+ * Component - AboutMe
+ */
+@import "./aboutMe";
 
 /*
  * Component - contactMe

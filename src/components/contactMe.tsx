@@ -31,7 +31,7 @@ const ContactInput: FunctionComponent<ContactInputProps> = ({ id, type, placehol
 
 const ContactMe: FunctionComponent<{}> = () => {
   return (
-    <div className="container mt-3" id="contactme">
+    <div className="container resume-section" id="contactme">
       <div className="row">
         <div className="col-md">
           <div className="mb-4">

@@ -3,7 +3,7 @@ import Article from "./article";
 
 const Education: FunctionComponent = () => {
   return (
-    <div className="container" id="education">
+    <div className="container resume-section" id="education">
       <Article
         title="Education"
         paragraphs={[
