@@ -9,26 +9,30 @@ export default class Home extends Component<{}> {
   headlineElementThird: TDiv = null;
   dividerElement: TDiv = null;
   descriptionElement: TDiv = null;
+  buttonElement: TDiv = null;
   animationTween = gsap.timeline({ paused: true });
 
   componentDidMount() {
+    const OFFSET = 0.7;
     this.animationTween
       // Headline - moving
       .from(
         [this.headlineElementFirst, this.headlineElementSecond, this.headlineElementThird],
         { y: 44, stagger: 0.1, ease: "none" },
-        0.2
+        OFFSET
       )
       // Headline - visibility
       .from(
         [this.headlineElementFirst, this.headlineElementSecond, this.headlineElementThird],
         { opacity: 0, stagger: 0.1, ease: "power2.in" },
-        0.2
+        OFFSET
       )
       // Divider - visibility
-      .from(this.dividerElement, { opacity: 0, ease: "none", duration: 1 }, 0.3)
+      .from(this.dividerElement, { opacity: 0, ease: "none", duration: 1 }, OFFSET + 0.1)
       // Description - visibility
-      .from(this.descriptionElement, { opacity: 0, x: -200, ease: "elastic.out", duration: 2 }, 0.3)
+      .from(this.descriptionElement, { opacity: 0, x: -200, ease: "elastic.out", duration: 2 }, OFFSET + 0.1)
+      // Button - visibility
+      .from(this.buttonElement, { opacity: 0 }, OFFSET + 0.3)
       .play();
   }
 
@@ -57,9 +61,11 @@ export default class Home extends Component<{}> {
               <h4 className="text-black font-weight-bold mb-5" ref={(el) => (this.descriptionElement = el)}>
                 Desktop &bull; Web &bull; Mobile
               </h4>
-              <a className="button -primary js-scroll-trigger" href="#about-me">
-                Find Out More
-              </a>
+              <div ref={(el) => (this.buttonElement = el)}>
+                <a className="button -primary js-scroll-trigger" href="#about-me">
+                  Find Out More
+                </a>
+              </div>
             </div>
           </div>
         </div>
