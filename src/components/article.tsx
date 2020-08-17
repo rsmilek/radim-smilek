@@ -3,7 +3,7 @@ import React, { FunctionComponent } from "react";
 type ArticleProps = {
   title: string;
   paragraphs: string[];
-  image: JSX.Element;
+  image?: JSX.Element;
 };
 
 // Displays resume's article
