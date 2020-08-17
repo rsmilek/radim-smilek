@@ -107,13 +107,18 @@ export default class MainNavbar extends Component<{}> {
                   </a>
                 </li>
                 <li className="nav-item">
+                  <a className="nav-link js-scroll-trigger" href="#education">
+                    Education
+                  </a>
+                </li>
+                <li className="nav-item">
                   <a className="nav-link js-scroll-trigger" href="#skills">
                     Skills
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link js-scroll-trigger" href="#education">
-                    Education
+                  <a className="nav-link js-scroll-trigger" href="#portfolio">
+                    Portfolio
                   </a>
                 </li>
                 <li className="nav-item">

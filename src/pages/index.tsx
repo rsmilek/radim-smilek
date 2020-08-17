@@ -9,6 +9,7 @@ import Home from "../components/home";
 import AboutMe from "../components/aboutMe";
 import SkillsAnim from "../components/skills";
 import Education from "../components/education";
+import Portfolio from "../components/portfolio";
 import ContactMe from "../components/contactMe";
 
 type IndexPageProps = {
@@ -43,8 +44,9 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({
         </Helmet>
         <MainNavbar />
         <AboutMe />
-        <SkillsAnim />
         <Education />
+        <SkillsAnim />
+        <Portfolio />
         <ContactMe />
         <HeroHeader />
         <h2>Blog Posts &darr;</h2>
