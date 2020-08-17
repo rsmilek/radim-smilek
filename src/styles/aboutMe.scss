@@ -2,7 +2,14 @@
     .img-profile {
         max-width: 13rem;
         max-height: 13rem;
-        border: 0.5rem solid rgba(255, 255, 255, 0.2);
-        float: right;
+
+        @media (max-width: 576px) {
+            max-width: 9rem;
+            max-height: 9rem;
+        }
+
+        border: 0.5rem solid var(--aboutme-bg);
+        // border: 0.5rem solid rgba(255, 255, 255, 0.2);
+        float: right; // MAGIC
     }
 }

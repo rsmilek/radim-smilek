@@ -5,9 +5,6 @@ import Article from "./article";
 const AboutMe: FunctionComponent = () => {
   return (
     <div className="container resume-section about-me" id="about-me">
-      <span className="d-none d-lg-block">
-        <img className="img-fluid img-profile rounded-circle mx-auto mb-2" src={profile} alt="" />
-      </span>
       <Article
         title="About Me"
         paragraphs={[
@@ -21,7 +18,8 @@ const AboutMe: FunctionComponent = () => {
              effective for the given purpose.`,
           `My hobbies are  walking with dog and long distance trail running.`,
         ]}
-      />
+        image={<img className="img-fluid img-profile rounded-circle" src={profile} alt="" />}
+      ></Article>
     </div>
   );
 };
