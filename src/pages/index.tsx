@@ -3,13 +3,14 @@ import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import PostLink from "../components/post-link";
-import HeroHeader from "../components/heroHeader";
+// import HeroHeader from "../components/heroHeader";
 import MainNavbar from "../components/mainNavbar";
 import Home from "../components/home";
 import AboutMe from "../components/aboutMe";
 import SkillsAnim from "../components/skills";
 import Education from "../components/education";
 import Portfolio from "../components/portfolio";
+import Blog from "../components/blog";
 import ContactMe from "../components/contactMe";
 
 type IndexPageProps = {
@@ -47,10 +48,11 @@ const IndexPage: FunctionComponent<IndexPageProps> = ({
         <Education />
         <SkillsAnim />
         <Portfolio />
+        <Blog posts={Posts} />
+        {/* <HeroHeader /> */}
+        {/* <h2>Blog Posts &darr;</h2>
+        <div className="grids">{Posts}</div> */}
         <ContactMe />
-        <HeroHeader />
-        <h2>Blog Posts &darr;</h2>
-        <div className="grids">{Posts}</div>
       </Layout>
     </Fragment>
   );

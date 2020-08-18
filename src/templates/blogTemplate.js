@@ -33,6 +33,9 @@ export default function Template({
           )}
           <div className="blog-post-content" dangerouslySetInnerHTML={{ __html: html }} />
         </article>
+        <a className="button -primary" href="/index.html#blog">
+          Back to home
+        </a>
       </div>
     </Layout>
   );
