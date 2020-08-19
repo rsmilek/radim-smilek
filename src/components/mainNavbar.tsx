@@ -85,7 +85,7 @@ export default class MainNavbar extends Component<{}> {
             </button>
             {/* First in DOM, no order applied */}
             <a className="navbar-brand js-scroll-trigger mr-auto" href="#home">
-              Home
+              RS home
             </a>
             {/* Second in DOM, order 2, re-order 3 on large screens
               NOTE: Items to always show keep out of the navbar-collapse div */}
@@ -103,7 +103,7 @@ export default class MainNavbar extends Component<{}> {
               <ul className="navbar-nav ml-auto">
                 <li className="nav-item">
                   <a className="nav-link js-scroll-trigger" href="#about-me">
-                    About Me
+                    About me
                   </a>
                 </li>
                 <li className="nav-item">
