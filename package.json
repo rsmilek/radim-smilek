@@ -33,7 +33,7 @@
     "jquery.easing": "^1.4.1",
     "magnific-popup": "^1.1.0",
     "netlify-cms-app": "^2.11.13",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "popper.js": "^1.16.1",
     "prismjs": "^1.19.0",
     "react": "^16.12.0",
